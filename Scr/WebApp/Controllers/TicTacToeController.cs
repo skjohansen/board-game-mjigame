@@ -13,5 +13,12 @@ namespace WebApp.Controllers
         {
             return View();
         }
+
+        public ActionResult Page2()
+        {
+            return View();
+        }
+
+
     }
 }

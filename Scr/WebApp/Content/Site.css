@@ -2,6 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     text-align: center;
+    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -26,7 +27,6 @@ textarea {
     margin:1px;
 }
 
-.test:hover {
-
-    background-color:red;
-}
+    .test:hover {
+        border: 2px solid;
+    }
