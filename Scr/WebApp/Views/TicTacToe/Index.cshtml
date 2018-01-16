@@ -4,7 +4,9 @@
     ViewBag.Title = "Tic Tac Toe";
 }
 
-<h1>Tic Tac Toe</h1>
+<h1>@Html.ActionLink("Create Game", "Index", "TicTacToe/Page2")</h1>
+<h2>or</h2>
+<h1>@Html.ActionLink("Join Game", "Index", "TicTacToe/Page2")</h1>
 @for (var i = 1; i < 10; i++)
 {
     <div class="test"> </div>
@@ -13,3 +15,5 @@
         <br>
     }
 }
+
+
