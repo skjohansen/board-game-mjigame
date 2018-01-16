@@ -6,9 +6,8 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
     padding-right: 15px;
-    text-align: center;
+    padding-left: 15px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -22,6 +21,12 @@ textarea {
     width: 100px;
     height: 100px;
     display:inline-block;
-    border:double;
+    border: 1px solid;
     border-color:black;
+    margin:1px;
+}
+
+.test:hover {
+
+    background-color:red;
 }
