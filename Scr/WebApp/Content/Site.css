@@ -17,8 +17,9 @@ textarea {
 }
 
 #test {
-    width:200px;
-    height:200px;
+    width:100px;
+    height:100px;
     border:dotted;
     border-color:black;
+    display:inline;
 }
