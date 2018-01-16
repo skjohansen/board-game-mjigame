@@ -1,12 +1,14 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    text-align: center;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    text-align: center;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -16,9 +18,10 @@ textarea {
     max-width: 280px;
 }
 
-#test {
+.test {
     width: 100px;
-    float: left;
     height: 100px;
-  
+    display:inline-block;
+    border:double;
+    border-color:black;
 }

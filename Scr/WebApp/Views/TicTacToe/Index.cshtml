@@ -1,11 +1,15 @@
 ﻿
 @{
     
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tic Tac Toe";
 }
 
 <h2>Index</h2>
-@for (var i = 0; i < 10; i++)
+@for (var i = 1; i < 10; i++)
 {
-    <div id="test"> @i</div>
+    <div class="test"> @i</div>
+    if (i == 3 || i == 6)
+    {
+        <br>
+    }
 }
