@@ -16,5 +16,10 @@ namespace WebApp.Models
         public string Simbolo { get; set; }
 
         public string ConnectionId { get; set; }
+
+        public PlayerModel()
+        {
+            Name = "Mattias";
+        }
     }
 }

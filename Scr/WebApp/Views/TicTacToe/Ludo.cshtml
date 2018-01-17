@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     Layout = "~/Views/Shared/_LayoutLudo.cshtml";
 }
     <div class="gameInfo">
@@ -80,14 +81,14 @@
             <div class="field"></div>
             <div class="field"></div>
             <div class="field"></div>
+            <div class="field">@Model.FindPiece()</div>
             <div class="field"></div>
-            <div class="field"></div>
             <div class="field player1"></div>
             <div class="field player1"></div>
             <div class="field player1"></div>
             <div class="field player1"></div>
             <div class="field player1"></div>
-            <div class="field"></div>
+            <div class="field"><div class="brick player1" onclick="method()"></div></div>
             <div class="field"></div>
             <div class="field"></div>
             <div class="field"></div>
@@ -97,7 +98,7 @@
         <div class="goal"></div>
         <div class="start player1">
             <div class="field">
-                <div class="brick player1"></div>
+               
             </div>
             <div class="field">
                 <div class="brick player1"></div>

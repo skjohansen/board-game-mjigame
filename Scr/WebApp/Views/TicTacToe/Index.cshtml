@@ -1,8 +1,9 @@
-﻿
+﻿@model WebApp.Models.PlayerModel
 @{
     
     ViewBag.Title = "Tic Tac Toe";
 }
+<h1>@Model.Name</h1>
 
 <h1>@Html.ActionLink("Create Game", "Page2", "TicTacToe")</h1>
 
