@@ -18,6 +18,10 @@ textarea {
     max-width: 280px;
 }
 
+a {
+    color: red;
+    text-decoration: none;
+}
 .test {
     width: 100px;
     height: 100px;
