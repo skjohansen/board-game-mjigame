@@ -19,6 +19,9 @@ namespace WebApp.Controllers
             return View();
         }
 
-
+        public ActionResult Ludo()
+        {
+            return View();
+        }
     }
 }
