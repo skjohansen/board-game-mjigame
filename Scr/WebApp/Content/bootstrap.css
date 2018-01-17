@@ -430,7 +430,7 @@ cite {
 }
 
 .text-primary {
-  color: #428bca;
+  color: black;
 }
 
 .text-warning {
@@ -2296,7 +2296,7 @@ fieldset[disabled] .btn-info.active {
 
 .btn-link {
   font-weight: normal;
-  color: #428bca;
+  color: black;
   cursor: pointer;
   border-radius: 0;
 }
@@ -3932,7 +3932,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #428bca;
+  background-color: black;
 }
 
 .nav-stacked > li {

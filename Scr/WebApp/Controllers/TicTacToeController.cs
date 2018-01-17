@@ -8,7 +8,7 @@ namespace WebApp.Controllers
 {
     public class TicTacToeController : Controller
     {
-        // GET: TicTacToe
+        
         public ActionResult Index()
         {
             return View();
