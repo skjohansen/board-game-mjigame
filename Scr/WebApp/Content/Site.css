@@ -2,7 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     text-align: center;
-    
+    font-family:Arial;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -19,20 +19,25 @@ textarea {
 }
 
 a {
-    color: red;
+    color: black;
     text-decoration: none;
 }
-.test {
+.gameBox {
     width: 100px;
     height: 100px;
     display:inline-block;
-    border: 1px solid;
+    border: 3px solid;
     border-color:black;
     margin:1px;
+    border-radius:5px;
 }
-
-    .test:hover {
-        border: 2px solid;
-        background-color:red;
-        background-image:url("");
+.gameBox a {
+    color:green;
+}
+    .gameBox:hover a {
+        color:red;
     }
+
+h1 {
+    font-size:80px;
+}

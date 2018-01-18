@@ -25,14 +25,23 @@ namespace WebApp.Controllers
 
         public ActionResult Page2()
         {
-            
-            return View(Session["nickname"]);
+            return View(Session["username"]);
         }
 
-        public ActionResult Ludo()
+        public ActionResult HostInformation()
         {
-            return View();
+            
+            return View(Session["username"]);
+            // create a view which have an input, <input type="text" name="Nickname" /> and a button eg "Start game"
+            // when clicking the button access the controller StartGame with the parameter nickname
+            // save the result in a session variable, eg. Session["nickname] = value of input
+            // show the nickname on StartGame view
+            // on View2 which shows the content of Session["nickname"]
+        }
+        public ActionResult ClientInformation()
+        {
 
+            return View(Session["username"]);
             // create a view which have an input, <input type="text" name="Nickname" /> and a button eg "Start game"
             // when clicking the button access the controller StartGame with the parameter nickname
             // save the result in a session variable, eg. Session["nickname] = value of input

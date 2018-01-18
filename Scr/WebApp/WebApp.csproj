@@ -91,6 +91,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Information.css" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -127,6 +128,9 @@
     <Content Include="Views\TicTacToe\Ludo.cshtml" />
     <Content Include="Views\Shared\_LayoutLudo.cshtml" />
     <Content Include="Views\TicTacToe\StartGame.cshtml" />
+    <Content Include="Views\TicTacToe\HostInformation.cshtml" />
+    <Content Include="Views\Shared\_LayoutInformation.cshtml" />
+    <Content Include="Views\TicTacToe\ClientInformation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

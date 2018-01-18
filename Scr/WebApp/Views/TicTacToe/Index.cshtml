@@ -5,20 +5,16 @@
 
 }
 
+<h1>Tic Tac Toe</h1>
+<h2>@Html.ActionLink("Create your own game", "HostInformation", "TicTacToe")</h2><p style="font-weight: bold">or join an existing game below!</p>
 
-<h1>@Html.ActionLink("Create Game", "Page2", "TicTacToe")</h1>
 
-<h1>@Html.ActionLink("Join Game", "Page2", "TicTacToe")</h1>
+<div class="gameBox"><p>@Html.ActionLink("Join Game", "ClientInformation", "TicTacToe")</p></div>
+<div class="gameBox"><p>@Html.ActionLink("Join Game", "ClientInformation", "TicTacToe")</p></div>
+<div class="gameBox"><p>@Html.ActionLink("Join Game", "ClientInformation", "TicTacToe")</p></div>
+<div class="gameBox"><p>@Html.ActionLink("Join Game", "ClientInformation", "TicTacToe")</p></div>
+<div class="gameBox"><p>@Html.ActionLink("Join Game", "ClientInformation", "TicTacToe")</p></div>
 
-<h1>@Html.ActionLink("Ludo Board", "Ludo", "TicTacToe")</h1>
 
-@for (var i = 1; i < 10; i++)
-{
-    <div class="test"> </div>
-    if (i == 3 || i == 6)
-    {
-        <br>
-    }
-}
 
 
