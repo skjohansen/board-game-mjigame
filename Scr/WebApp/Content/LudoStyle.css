@@ -18,6 +18,14 @@ html{
     left: 50px;
 }
 
+.dice:hover {
+    background-color:black;
+}
+
+.dice:hover > .diceDot {
+    background-color:white;
+}
+
 .diceDot{
     width: 10px;
     height: 10px;
@@ -83,6 +91,12 @@ html{
     text-align: center;
     vertical-align: middle;
     float: left;
+}
+
+.field:hover {
+    
+    background-color: black;
+    border:1px solid white;
 }
 
 .board{

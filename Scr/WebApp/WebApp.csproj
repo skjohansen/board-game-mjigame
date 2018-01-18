@@ -110,7 +110,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\PlayerModel.cs" />
+    <Compile Include="Models\MyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +126,7 @@
     <Content Include="Views\TicTacToe\Page2.cshtml" />
     <Content Include="Views\TicTacToe\Ludo.cshtml" />
     <Content Include="Views\Shared\_LayoutLudo.cshtml" />
+    <Content Include="Views\TicTacToe\StartGame.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

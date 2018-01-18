@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace GameEngine
 {
-    public class Class1
+    public class Player
     {
+        public string name { get; set; }
+        public string email { get; set; }
+
+        
     }
 }
