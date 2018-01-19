@@ -12,9 +12,8 @@ namespace WebApp.Controllers
         
         public ActionResult Index()
         {
-            MyModel test = new MyModel();
             Session.Add("gameId", 3);
-            return View(test);
+            return View();
         }
 
         // /Default/StartGame?nickname=Nickckkke

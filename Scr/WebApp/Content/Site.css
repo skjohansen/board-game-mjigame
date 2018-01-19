@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 20px;
     text-align: center;
     font-family:Arial;
@@ -32,10 +32,10 @@ a {
     border-radius:5px;
 }
 .gameBox a {
-    color:green;
+    color:black;
 }
     .gameBox:hover a {
-        color:red;
+        font-weight:bold;
     }
 
 h1 {
