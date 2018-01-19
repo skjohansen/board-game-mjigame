@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 30px;
+    padding-top: 100px;
     padding-bottom: 20px;
     text-align: center;
     font-family:Arial;
@@ -35,9 +35,29 @@ a {
     color:black;
 }
     .gameBox:hover a {
-        font-weight:bold;
+       
     }
 
 h1 {
-    font-size:80px;
+    font-size: 80px;
+    color: #3399ff;
 }
+
+.joinbutton {
+    background: #3399ff;
+    border: 0;
+    width: 80%;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.4s linear;
+    padding:7px;
+}
+
+.joinbutton a {
+    color:white;
+}
+
+    .joinbutton:hover {
+        background-color: aqua;
+    }

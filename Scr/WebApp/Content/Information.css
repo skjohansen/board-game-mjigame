@@ -19,11 +19,12 @@
 }
 
 h1 {
-    color: black;
-    font-family:Arial;
-
+    color: #3399ff;
+    font-family: Arial;
 }
-
+h2 {
+    color:black;
+}
 input {
     width: 250px;
     height: 30px;
