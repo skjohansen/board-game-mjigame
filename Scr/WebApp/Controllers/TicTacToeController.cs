@@ -9,12 +9,27 @@ namespace WebApp.Controllers
 {
     public class TicTacToeController : Controller
     {
-        
+
+        //public ActionResult Index()
+        //{
+        //    Session.Add("gameId", 3);
+        //    return View();
+        //}
+
+
         public ActionResult Index()
         {
-            Session.Add("gameId", 3);
+            ViewData["Message"] = "Welcome to ASP.NET MVC!";
+            string cookie = "There is no cookie!";
+            if (this.ControllerContext.HttpContext.Request.Cookies.AllKeys.Contains("Cookie"))
+            {
+                cookie = "Yeah - Cookie: " + this.ControllerContext.HttpContext.Request.Cookies["Cookie"].Value;
+            }
+            ViewData["Cookie"] = cookie;
             return View();
         }
+
+
 
         // /Default/StartGame?nickname=Nickckkke
         public ActionResult StartGame(string nickname)
