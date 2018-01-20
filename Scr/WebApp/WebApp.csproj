@@ -107,6 +107,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Client.cs" />
+    <Compile Include="Controllers\TicTacToe.cs" />
     <Compile Include="Controllers\TicTacToeController.cs" />
     <Compile Include="Controllers\TicTacToeGameLogic.cs" />
     <Compile Include="Global.asax.cs">
