@@ -19,27 +19,29 @@ textarea {
 }
 
 a {
-    color: black;
+    color: #3399ff;
     text-decoration: none;
 }
 .gameBox {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     display:inline-block;
-    border: 3px solid;
+    border: 1px solid;
     border-color:black;
     margin:1px;
     border-radius:5px;
 }
-.gameBox a {
-    color:black;
-}
-    .gameBox:hover a {
-       
+    .gameBox a {
+       color: #3399ff;
     }
+
 
 h1 {
     font-size: 80px;
+    color: #3399ff;
+}
+
+h2 {
     color: #3399ff;
 }
 

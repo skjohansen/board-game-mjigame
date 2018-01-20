@@ -9,7 +9,7 @@ namespace GameEngine
     public class Player
     {
         public string name { get; set; }
-        public string email { get; set; }
+        public string playerID { get; set; }
 
         
     }
