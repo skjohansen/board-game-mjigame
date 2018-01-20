@@ -4,10 +4,10 @@ using SweNug.SignalR.Server;
 
 namespace SweNug.SignalR.Tests
 {
-    [TestClass]
+    
     public class TicTacToeTests
     {
-        [TestMethod]
+       
         public void TicTacToe_PlaceFirstRow_Winning()
         {
             var ticTacToe = new TicTacToe();
@@ -22,7 +22,7 @@ namespace SweNug.SignalR.Tests
 
             Assert.IsTrue(ticTacToe.IsGameOver);
         }
-        [TestMethod]
+       
         public void TicTacToe_PlaceSecondRow_Winning()
         {
             var ticTacToe = new TicTacToe();
@@ -39,7 +39,7 @@ namespace SweNug.SignalR.Tests
             Assert.IsTrue(ticTacToe.IsGameOver);
         }
 
-        [TestMethod]
+        
         public void TicTacToe_PlaceThirdRow_Winning()
         {
             var ticTacToe = new TicTacToe();
@@ -55,7 +55,7 @@ namespace SweNug.SignalR.Tests
 
             Assert.IsTrue(ticTacToe.IsGameOver);
         }
-        [TestMethod]
+       
         public void TicTacToe_PlaceDiagonalOne_Winning()
         {
             var ticTacToe = new TicTacToe();
@@ -71,7 +71,7 @@ namespace SweNug.SignalR.Tests
 
             Assert.IsTrue(ticTacToe.IsGameOver);
         }
-        [TestMethod]
+       
         public void TicTacToe_PlaceDiagonalTwo_Winning()
         {
             var ticTacToe = new TicTacToe();
