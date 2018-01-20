@@ -1,9 +1,7 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+@model WebApp.Models.PlayerModel
 
-@{
-    string x = "userName";
-}
+
 <html> <!-- test -->
 <head>
     <link href="~/Content/Information.css" rel="stylesheet" type="text/css" />
@@ -16,9 +14,16 @@
         <h1>Tic Tac Toe</h1>
         <h2>Information</h2>
 
-        <input type="text" name="username" id=@x placeholder="username" required><br><br>
+        @*<input type="text" name="username"  placeholder="username" required><br><br>*@
 
-        <button type="submit" name="button" id="submit" onclick="location.href='@Url.Action("Game", "TicTacToe")';return false;">Let's go!</button>
+        @*<button type="submit" name="button" id="submit" onclick="location.href='@Url.Action("Game", "TicTacToe")';return false;">Let's go!</button>*@
+
+         <form action="GetUsername" method="post">
+             <input type="text" name="username" placeholder="username" required>
+             <input type="submit" id="submit" value="let's go"/>
+         </form>
+
+
 
     </div>
 </body>

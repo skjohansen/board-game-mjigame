@@ -21,12 +21,13 @@ textarea {
 a {
     color: #3399ff;
     text-decoration: none;
+    transition: 0.4s linear;
 }
 .gameBox {
     width: 120px;
     height: 120px;
     display:inline-block;
-    border: 1px solid;
+    border: 1px dashed;
     border-color:black;
     margin:1px;
     border-radius:5px;

@@ -129,6 +129,7 @@
     <Content Include="Views\Shared\_LayoutInformation.cshtml" />
     <Content Include="Views\TicTacToe\ClientInformation.cshtml" />
     <Content Include="Views\TicTacToe\Game.cshtml" />
+    <Content Include="Views\TicTacToe\GetUsername.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
