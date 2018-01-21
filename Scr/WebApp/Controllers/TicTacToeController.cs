@@ -70,13 +70,17 @@ namespace WebApp.Controllers
         }
         public ActionResult ClientInformation()
         {
+            PlayerModel player = new PlayerModel();
             return View();
         }
 
-        public ActionResult GetUsername(string username)
+        public ActionResult GetUserName(PlayerModel player)
         {
-            PlayerModel player = new PlayerModel();
-            player.Name = username;
+            HttpCookie aCookie = new HttpCookie("lastVisit");
+            aCookie.Value = DateTime.Now.ToString();
+            aCookie.Expires = DateTime.Now.AddDays(1);
+            Response.Cookies.Add(aCookie);
+            player.UserID = aCookie.Value;
             return View(player);
         }
 
