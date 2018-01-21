@@ -1,15 +1,16 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SweNug.SignalR.Server;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace SweNug.SignalR.Tests
+namespace WebApp.Controllers
 {
-    
-    public class TicTacToeTests
+    public class TicTacToeGameLogic
     {
-       
-        public void TicTacToe_PlaceFirstRow_Winning()
-        {
+
+         
+            public void TicTacToe_PlaceFirstRow_Winning()
+            {
             var ticTacToe = new TicTacToe();
             ticTacToe.Player1 = new Client { ConnectionId = Guid.NewGuid().ToString() };
             ticTacToe.Player2 = new Client { ConnectionId = Guid.NewGuid().ToString() };
@@ -20,11 +21,13 @@ namespace SweNug.SignalR.Tests
             ticTacToe.Play(1, 7);
             ticTacToe.Play(0, 2);
 
-            Assert.IsTrue(ticTacToe.IsGameOver);
+            /// Assert.IsTrue(ticTacToe.IsGameOver);
+            /// ///https://msdn.microsoft.com/en-us/library/ms243768.aspx
+            /// på länken vi kan läsa om Assert klassen
         }
-       
+
         public void TicTacToe_PlaceSecondRow_Winning()
-        {
+            {
             var ticTacToe = new TicTacToe();
             ticTacToe.Player1 = new Client { ConnectionId = Guid.NewGuid().ToString() };
             ticTacToe.Player2 = new Client { ConnectionId = Guid.NewGuid().ToString() };
@@ -36,12 +39,12 @@ namespace SweNug.SignalR.Tests
             ticTacToe.Play(0, 6);
             ticTacToe.Play(1, 5);
 
-            Assert.IsTrue(ticTacToe.IsGameOver);
+            // Assert.IsTrue(ticTacToe.IsGameOver);
         }
 
-        
-        public void TicTacToe_PlaceThirdRow_Winning()
-        {
+
+            public void TicTacToe_PlaceThirdRow_Winning()
+            {
             var ticTacToe = new TicTacToe();
             ticTacToe.Player1 = new Client { ConnectionId = Guid.NewGuid().ToString() };
             ticTacToe.Player2 = new Client { ConnectionId = Guid.NewGuid().ToString() };
@@ -53,11 +56,11 @@ namespace SweNug.SignalR.Tests
             ticTacToe.Play(0, 6);
             ticTacToe.Play(1, 8);
 
-            Assert.IsTrue(ticTacToe.IsGameOver);
+            // Assert.IsTrue(ticTacToe.IsGameOver);
         }
-       
-        public void TicTacToe_PlaceDiagonalOne_Winning()
-        {
+
+            public void TicTacToe_PlaceDiagonalOne_Winning()
+            {
             var ticTacToe = new TicTacToe();
             ticTacToe.Player1 = new Client { ConnectionId = Guid.NewGuid().ToString() };
             ticTacToe.Player2 = new Client { ConnectionId = Guid.NewGuid().ToString() };
@@ -69,11 +72,11 @@ namespace SweNug.SignalR.Tests
             ticTacToe.Play(0, 8);
             ticTacToe.Play(1, 6);
 
-            Assert.IsTrue(ticTacToe.IsGameOver);
+            //Assert.IsTrue(ticTacToe.IsGameOver);
         }
-       
-        public void TicTacToe_PlaceDiagonalTwo_Winning()
-        {
+
+            public void TicTacToe_PlaceDiagonalTwo_Winning()
+            {
             var ticTacToe = new TicTacToe();
             ticTacToe.Player1 = new Client { ConnectionId = Guid.NewGuid().ToString() };
             ticTacToe.Player2 = new Client { ConnectionId = Guid.NewGuid().ToString() };
@@ -85,7 +88,17 @@ namespace SweNug.SignalR.Tests
             ticTacToe.Play(0, 6);
             ticTacToe.Play(1, 8);
 
-            Assert.IsTrue(ticTacToe.IsGameOver);
+            // Assert.IsTrue(ticTacToe.IsGameOver);
+
+
         }
+        }
+
+
+
+
+
+
+
+
     }
-}

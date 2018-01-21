@@ -23,6 +23,10 @@ a {
     text-decoration: none;
     transition: 0.4s linear;
 }
+a:hover{
+    color: orangered;
+}
+
 .gameBox {
     width: 120px;
     height: 120px;
