@@ -9,8 +9,8 @@ namespace GameEngine
 {
     public class Player
     {
-        public string name { get; set; }
-        public string playerID { get; set; }
+        public string Name { get; set; }
+        public string PlayerID { get; set; }
 
         
     }

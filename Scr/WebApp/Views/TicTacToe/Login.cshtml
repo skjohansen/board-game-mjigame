@@ -17,11 +17,12 @@
         <h1>Tic Tac Toe</h1>
         <h2>Enter Username</h2>
 
-        <form action="Game" method="post">
-            <input type="text" name="UserName" placeholder="username" required>
-            <input type="submit" id="submit" value="let's go" />
-        </form>
+        @using (Html.BeginForm("PreGame", "TicTacToe"))
+        {
 
+            <input type="text" name="blabla" placeholder="username" required>
+            <input type="submit" id="submit" value="let's go" />
+        }
     </div>
 </body>
 </html>

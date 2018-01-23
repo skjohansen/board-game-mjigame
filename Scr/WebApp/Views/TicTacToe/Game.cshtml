@@ -1,4 +1,6 @@
-﻿<html>
+﻿@model WebApp.Models.Gameboard
+
+<html>
 <head>
     <link href="reset.css" rel="stylesheet" />
     <link href="~/Content/Game.css" rel="stylesheet" type="text/css" />
@@ -20,19 +22,19 @@
             <div id="board" class="boxy">
                 <table id="bort">
                     <tr id="A">
-                        <td class="one square corner"> </td>
-                        <td class="two square middle"> </td>
-                        <td class="three square corner"> </td>
+                        <td class="one square corner"><a href="/TicTacToe/Game?fieldId=0"><div style="background-color:@Model.FieldColor[0];width:50px;height:50px; display:block;"></div></a> </td>
+                        <td class="two square middle"><a href="/TicTacToe/Game?fieldId=1"><div style="background-color:@Model.FieldColor[1];width:50px;height:50px; display:block;"></div></a> </td>
+                        <td class="three square corner"><a href="/TicTacToe/Game?fieldId=2"><div style="background-color:@Model.FieldColor[2];width:50px;height:50px; display:block;"></div></a> </td>
                     </tr>
                     <tr id="B">
-                        <td class="one square middle"> </td>
-                        <td class="two square center"> </td>
-                        <td class="three square middle"> </td>
+                        <td class="one square middle"><a href="TicTacToe/Game?fieldId=3"><div style="background-color:red;width:100%;height:100%;"></div></a> </td>
+                        <td class="two square center"><a href="TicTacToe/Game?fieldId=4"><div style="background-color:red;width:100%;height:100%;"></div></a> </td>
+                        <td class="three square middle"><a href="TicTacToe/Game?fieldId=5"><div style="background-color:red;width:100%;height:100%;"></div></a> </td>
                     </tr>
                     <tr id="C">
-                        <td class="one square corner"> </td>
-                        <td class="two square middle"> </td>
-                        <td class="three square corner"> </td>
+                        <td class="one square corner"><a href="TicTacToe/Game?fieldId=6"><div style="background-color:red;width:100%;height:100%;"></div></a> </td>
+                        <td class="two square middle"><a href="TicTacToe/Game?fieldId=7"><div style="background-color:red;width:100%;height:100%;"></div></a> </td>
+                        <td class="three square corner"> <a href="TicTacToe/Game?fieldId=8"><div style="background-color:red;width:100%;height:100%;"></div></a></td>
                     </tr>
                 </table>
             </div>

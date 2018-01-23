@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using WebApp.Models;
 
 namespace WebApp.Controllers
 {
@@ -17,23 +18,41 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public ActionResult Game(string UserName)
-        {
+        public ActionResult PreGame(string userName) { 
+        
             if (ticTacToeGame == null){
                 ticTacToeGame = new TicTacToe();
             }
-            ticTacToeGame.JoinGame(new Player() { name = UserName });
-
-            // send playernames to view
-            if (ticTacToeGame.Players.Count >= 1) {
-                ViewBag.Player1 = ticTacToeGame.Players[0].name;
+            ticTacToeGame.JoinGame(new Player() { Name = userName });
+            return RedirectToAction("Game", "TicTacToe");
             }
+
+        public ActionResult Game(string fieldId)
+        {
+
+            if (ticTacToeGame.Players.Count >= 1) {
+                ViewBag.Player1 = ticTacToeGame.Players[0].Name;
+            }
+
             if (ticTacToeGame.Players.Count >= 2)
             {
-                ViewBag.Player2 = ticTacToeGame.Players[1].name;
+                ViewBag.Player2 = ticTacToeGame.Players[1].Name;
             }
 
-            return View();
+            Gameboard gb = new Gameboard();
+            gb.FieldColor = new string[9];
+            for (int i = 0; i < 9; i++)
+            {
+                gb.FieldColor[i] = "red";
+            }
+
+            if (fieldId != null)
+            {
+                gb.FieldColor[int.Parse(fieldId)] = "blue";
+            }
+            
+            
+            return View(gb);
         }
 
 

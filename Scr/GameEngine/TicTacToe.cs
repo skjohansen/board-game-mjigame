@@ -20,5 +20,9 @@ namespace GameEngine
             }
             Players.Add(player);
         }
+        public void MakeMove()
+        {
+
+        }
     }
 }
