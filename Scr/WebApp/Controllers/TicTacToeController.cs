@@ -18,6 +18,8 @@ namespace WebApp.Controllers
 
         public ActionResult Game(string UserName)
         {
+            ViewBag.Player1 = UserName;
+            ViewBag.Player2 = UserName;
             return View();
         }
 
