@@ -1,0 +1,40 @@
+﻿@{
+
+    ViewBag.Title = "Tic Tac Toe";
+
+}
+
+
+<html>
+<!-- test -->
+<head>
+    <link href="~/Content/Main.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <h2>@Html.ActionLink("Create your own game", "Game", "TicTacToe")</h2><p style="font-weight: bold">or join an existing game below!</p>
+
+    <div class="gameBox" id="room1">
+        <p>Michael</p>
+        <button class="joinbutton">@Html.ActionLink("Join Game", "Game", "TicTacToe")</button>
+    </div>
+    <div class="gameBox" id="room2">
+        <p>Ilja</p>
+        <button class="joinbutton">@Html.ActionLink("Join Game", "Game", "TicTacToe")</button>
+    </div>
+    <div class="gameBox" id="room3">
+        <p>Jakob</p>
+        <button class="joinbutton">@Html.ActionLink("Join Game", "Game", "TicTacToe")</button>
+    </div>
+    <div class="gameBox" id="room4">
+        <p>Putin</p>
+        <button class="joinbutton">@Html.ActionLink("Join Game", "Game", "TicTacToe")</button>
+    </div>
+    <div class="gameBox" id="room5">
+        <p>Marinel</p>
+        <button class="joinbutton">@Html.ActionLink("Join Game", "Game", "TicTacToe")</button>
+    </div>
+
+</body>
+</html>

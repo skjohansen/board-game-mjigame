@@ -89,9 +89,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="blandat.txt" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Information.css" />
+    <Content Include="Content\Main.css" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -125,12 +126,12 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\TicTacToe\Index.cshtml" />
+    <Content Include="Views\TicTacToe\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\TicTacToe\Ludo.cshtml" />
     <Content Include="Views\Shared\_LayoutLudo.cshtml" />
     <Content Include="Views\Shared\_LayoutInformation.cshtml" />
-    <Content Include="Views\TicTacToe\ClientInformation.cshtml" />
+    <Content Include="Views\TicTacToe\CreateJoinGame.cshtml" />
     <Content Include="Views\TicTacToe\Game.cshtml" />
     <Content Include="Views\TicTacToe\GetUserName.cshtml" />
     <None Include="Web.Debug.config">
