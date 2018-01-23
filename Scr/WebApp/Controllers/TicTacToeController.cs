@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameEngine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,7 +10,7 @@ namespace WebApp.Controllers
 {
     public class TicTacToeController : Controller
     {
-        
+        private static TicTacToe ticTacToeGame;
 
         public ActionResult Login()
         {
@@ -18,10 +19,23 @@ namespace WebApp.Controllers
 
         public ActionResult Game(string UserName)
         {
-            ViewBag.Player1 = UserName;
-            ViewBag.Player2 = UserName;
+            if (ticTacToeGame == null){
+                ticTacToeGame = new TicTacToe();
+            }
+            ticTacToeGame.JoinGame(new Player() { name = UserName });
+
+            // send playernames to view
+            if (ticTacToeGame.Players.Count >= 1) {
+                ViewBag.Player1 = ticTacToeGame.Players[0].name;
+            }
+            if (ticTacToeGame.Players.Count >= 2)
+            {
+                ViewBag.Player2 = ticTacToeGame.Players[1].name;
+            }
+
             return View();
         }
+
 
 
     }

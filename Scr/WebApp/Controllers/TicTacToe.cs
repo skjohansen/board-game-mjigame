@@ -1,6 +1,6 @@
 ﻿namespace WebApp.Controllers
 {
-    public class TicTacToe
+    public class TicTacToe1
     {
         public bool IsGameOver { get; private set; }
 
@@ -13,7 +13,7 @@
         private readonly int[] field = new int[9];
         private int movesLeft = 9;
 
-        public TicTacToe()
+        public TicTacToe1()
         {
             // Reset game
             for (var i = 0; i < field.Length; i++)
