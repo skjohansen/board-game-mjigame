@@ -8,8 +8,9 @@ namespace WebApp.Models
 {
     public class PlayerModel
     {
-      
+        [Required]
         public string UserName { get; set; }
+
         public string UserID { get; set; }
 
     }

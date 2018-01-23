@@ -76,12 +76,16 @@ namespace WebApp.Controllers
 
         public ActionResult GetUserName(PlayerModel player)
         {
-            HttpCookie aCookie = new HttpCookie("lastVisit");
-            aCookie.Value = DateTime.Now.ToString();
-            aCookie.Expires = DateTime.Now.AddDays(1);
-            Response.Cookies.Add(aCookie);
-            player.UserID = aCookie.Value;
+            //HttpCookie aCookie = new HttpCookie("CookieName");
+            //aCookie.Value = DateTime.Now.ToString();
+            //aCookie.Expires = DateTime.Now.AddMinutes(5);
+            //Response.Cookies.Add(aCookie);
+            //player.UserID = aCookie.Value;
+
+
+
             return View(player);
+
         }
 
 
