@@ -12,6 +12,7 @@
       
     <h1>Tic Tac Toe</h1>
 
+            @*Själva spelrutan är här*@
             <div id="board" class="gameBox">
 
                 <a href="/TicTacToe/Game?fieldId=0" class="ruta" style="background-color:@Model.FieldColor[0];"></a>
@@ -26,19 +27,9 @@
                 <a href="/TicTacToe/Game?fieldId=7" class="ruta" style="background-color:@Model.FieldColor[7];"></a>
                 <a href="/TicTacToe/Game?fieldId=8" class="ruta" style="background-color:@Model.FieldColor[8];"></a>
 
-                        @*<a href="/TicTacToe/Game?fieldId=1"><div class="ruta" style="background-color:@Model.FieldColor[1];"></div></a>
-                        <a href="/TicTacToe/Game?fieldId=2"><div class="ruta" style="background-color:@Model.FieldColor[2];"></div></a> <br />
-
-                        <a href="/TicTacToe/Game?fieldId=3"><div class="ruta" style="background-color:@Model.FieldColor[3];"></div></a>
-                        <a href="/TicTacToe/Game?fieldId=4"><div class="ruta" style="background-color:@Model.FieldColor[4];"></div></a>
-                        <a href="/TicTacToe/Game?fieldId=5"><div class="ruta" style="background-color:@Model.FieldColor[5];"></div></a><br />
-  
-                        <a href="/TicTacToe/Game?fieldId=6"><div class="ruta" style="background-color:@Model.FieldColor[6];"></div></a>
-                        <a href="/TicTacToe/Game?fieldId=7"><div class="ruta" style="background-color:@Model.FieldColor[7];"></div></a>
-                        <a href="/TicTacToe/Game?fieldId=8"><div class="ruta" style="background-color:@Model.FieldColor[8];"></div></a>*@
-
             </div>
-
+            
+            @*Resultatrutan här*@
             <div id="score" class="resultBox">
                 <table id="scoreBox">
                     <thead>Score</thead>
@@ -54,7 +45,7 @@
                     </tr>
                 </table>
 
-                <div class="bar"><h3>( X ) It's your turn!</h3></div>
+                <div class="bar"><h3>[ X ] It's your turn!</h3></div>
 
             </div>
 
