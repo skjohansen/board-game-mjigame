@@ -1,6 +1,6 @@
 ﻿body {
     background-color: #fff;
-    padding-top: 120px;
+    padding-top: 100px;
     padding-bottom: 20px;
     text-align: center;
 }
@@ -29,7 +29,6 @@ h1 {
     height: 110px;
     width: 110px;
 }
-
 
 
 #A .two {
@@ -83,7 +82,7 @@ h1 {
 
 #score {
     width: 300px;
-    //color: #401304;
+    color: #401304;
     font-family: Tahoma, sans-serif;
     font-size: 1.3em;
 }
@@ -93,10 +92,19 @@ h1 {
     display: block;
 }
 
-.boxy {
-    display: inline-table;
+.gameBox {
+    display:block;
+    width:500px;
+    height:300px;
+    margin:0 auto;
+    padding:0;
+    border:none;
 }
 
+.resultBox {
+    margin:0 auto;
+    margin-top:50px;
+}
 .boxer {
     text-align: center;
 }
@@ -120,4 +128,18 @@ h1 {
 
 p {
     text-align: left;
+}
+
+.ruta {
+    display:inline-block;
+    width:100px;
+    height:100px;
+    margin:0;
+}
+
+a {
+   display:block;
+   width:100px;
+   height:100px;
+   margin:0;
 }

@@ -29,9 +29,17 @@ namespace WebApp.Controllers
 
         public ActionResult Game(string fieldId)
         {
+            try
+            {
+                if (ticTacToeGame.Players.Count >= 1)
+                {
+                    ViewBag.Player1 = ticTacToeGame.Players[0].Name;
+                }
+            }
 
-            if (ticTacToeGame.Players.Count >= 1) {
-                ViewBag.Player1 = ticTacToeGame.Players[0].Name;
+            catch
+            {
+                return RedirectToAction("Login", "TicTacToe");
             }
 
             if (ticTacToeGame.Players.Count >= 2)
@@ -50,7 +58,6 @@ namespace WebApp.Controllers
             {
                 gb.FieldColor[int.Parse(fieldId)] = "blue";
             }
-            
             
             return View(gb);
         }

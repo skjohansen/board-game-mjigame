@@ -4,45 +4,42 @@
 <head>
     <link href="reset.css" rel="stylesheet" />
     <link href="~/Content/Game.css" rel="stylesheet" type="text/css" />
-    <h1>Tic Tac Toe</h1>
+   
 </head>
 <body>
 
 
-    <div class="box">
-        <div class="boxer">
-            <div id="rules" class="boxy">
-                <h3>Rules:</h3><br>
-                <p>
-                    - X goes first<br>
-                    - Take turns<br>
-                    - Three markers in the same row, column, or diagonal wins<br>
+      
+    <h1>Tic Tac Toe</h1>
+
+            <div id="board" class="gameBox">
+
+                <a href="/TicTacToe/Game?fieldId=0" class="ruta" style="background-color:@Model.FieldColor[0];"></a>
+                <a href="/TicTacToe/Game?fieldId=1" class="ruta" style="background-color:@Model.FieldColor[1];"></a>
+                <a href="/TicTacToe/Game?fieldId=2" class="ruta" style="background-color:@Model.FieldColor[2];"></a><br />
+
+                <a href="/TicTacToe/Game?fieldId=3" class="ruta" style="background-color:@Model.FieldColor[3];"></a>
+                <a href="/TicTacToe/Game?fieldId=4" class="ruta" style="background-color:@Model.FieldColor[4];"></a>
+                <a href="/TicTacToe/Game?fieldId=5" class="ruta" style="background-color:@Model.FieldColor[5];"></a><br />
+
+                <a href="/TicTacToe/Game?fieldId=6" class="ruta" style="background-color:@Model.FieldColor[6];"></a>
+                <a href="/TicTacToe/Game?fieldId=7" class="ruta" style="background-color:@Model.FieldColor[7];"></a>
+                <a href="/TicTacToe/Game?fieldId=8" class="ruta" style="background-color:@Model.FieldColor[8];"></a>
+
+                        @*<a href="/TicTacToe/Game?fieldId=1"><div class="ruta" style="background-color:@Model.FieldColor[1];"></div></a>
+                        <a href="/TicTacToe/Game?fieldId=2"><div class="ruta" style="background-color:@Model.FieldColor[2];"></div></a> <br />
+
+                        <a href="/TicTacToe/Game?fieldId=3"><div class="ruta" style="background-color:@Model.FieldColor[3];"></div></a>
+                        <a href="/TicTacToe/Game?fieldId=4"><div class="ruta" style="background-color:@Model.FieldColor[4];"></div></a>
+                        <a href="/TicTacToe/Game?fieldId=5"><div class="ruta" style="background-color:@Model.FieldColor[5];"></div></a><br />
+  
+                        <a href="/TicTacToe/Game?fieldId=6"><div class="ruta" style="background-color:@Model.FieldColor[6];"></div></a>
+                        <a href="/TicTacToe/Game?fieldId=7"><div class="ruta" style="background-color:@Model.FieldColor[7];"></div></a>
+                        <a href="/TicTacToe/Game?fieldId=8"><div class="ruta" style="background-color:@Model.FieldColor[8];"></div></a>*@
+
             </div>
 
-            <div id="board" class="boxy">
-                <table id="bort">
-                    <tr id="A">
-                        <td class="one square corner"><a href="/TicTacToe/Game?fieldId=0"><div style="background-color:@Model.FieldColor[0];width:50px;height:50px; display:block;"></div></a> </td>
-                        <td class="two square middle"><a href="/TicTacToe/Game?fieldId=1"><div style="background-color:@Model.FieldColor[1];width:50px;height:50px; display:block;"></div></a> </td>
-                        <td class="three square corner"><a href="/TicTacToe/Game?fieldId=2"><div style="background-color:@Model.FieldColor[2];width:50px;height:50px; display:block;"></div></a> </td>
-                    </tr>
-                    <tr id="B">
-                        <td class="one square middle"><a href="TicTacToe/Game?fieldId=3"><div style="background-color:red;width:100%;height:100%;"></div></a> </td>
-                        <td class="two square center"><a href="TicTacToe/Game?fieldId=4"><div style="background-color:red;width:100%;height:100%;"></div></a> </td>
-                        <td class="three square middle"><a href="TicTacToe/Game?fieldId=5"><div style="background-color:red;width:100%;height:100%;"></div></a> </td>
-                    </tr>
-                    <tr id="C">
-                        <td class="one square corner"><a href="TicTacToe/Game?fieldId=6"><div style="background-color:red;width:100%;height:100%;"></div></a> </td>
-                        <td class="two square middle"><a href="TicTacToe/Game?fieldId=7"><div style="background-color:red;width:100%;height:100%;"></div></a> </td>
-                        <td class="three square corner"> <a href="TicTacToe/Game?fieldId=8"><div style="background-color:red;width:100%;height:100%;"></div></a></td>
-                    </tr>
-                </table>
-            </div>
-
-
-
-
-            <div id="score" class="boxy">
+            <div id="score" class="resultBox">
                 <table id="scoreBox">
                     <thead>Score</thead>
                     <tr>
