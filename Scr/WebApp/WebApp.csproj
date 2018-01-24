@@ -94,8 +94,17 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Game.css" />
     <Content Include="Content\Main.css" />
+    <Content Include="Content\O.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\reset.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\W.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\X.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -109,10 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\Client.cs" />
-    <Compile Include="Controllers\TicTacToe.cs" />
     <Compile Include="Controllers\TicTacToeController.cs" />
-    <Compile Include="Controllers\TicTacToeGameLogic.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -129,7 +135,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\TicTacToe\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\TicTacToe\Ludo.cshtml" />
     <Content Include="Views\Shared\_LayoutLudo.cshtml" />
     <Content Include="Views\Shared\_LayoutInformation.cshtml" />
     <Content Include="Views\TicTacToe\Game.cshtml" />

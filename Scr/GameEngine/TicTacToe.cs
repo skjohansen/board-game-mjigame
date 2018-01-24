@@ -20,9 +20,18 @@ namespace GameEngine
             }
             Players.Add(player);
         }
-        public void MakeMove()
+        public void MakeMove(Player player)
         {
 
         }
+        public void CheckWinner()
+        {
+
+        }
+        public void CheckTie()
+        {
+
+        }
+
     }
 }

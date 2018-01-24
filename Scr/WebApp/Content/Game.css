@@ -25,49 +25,6 @@ h1 {
     border-collapse: collapse;
 }
 
-.square {
-    height: 110px;
-    width: 110px;
-}
-
-
-
-#A .two {
-    border-left: 4px solid #401304;
-    border-right: 4px solid #401304;
-    border-bottom: 4px solid #401304;
-}
-
-#B .one {
-    border-top: 4px solid #401304;
-    border-bottom: 4px solid #401304;
-    border-right: 4px solid #401304;
-}
-
-#B .three {
-    border-top: 4px solid #401304;
-    border-bottom: 4px solid #401304;
-    border-left: 4px solid #401304;
-}
-
-#C .two {
-    border-top: 4px solid #401304;
-    border-left: 4px solid #401304;
-    border-right: 4px solid #401304;
-}
-
-.marker {
-    height: 90px;
-    width: 90px;
-    font-family: sans-serif;
-    font-size: 80px;
-    background-color: #401304;
-    color: #ffffff;
-    text-align: center;
-    border-radius: 50%;
-    float: center;
-    margin: auto;
-}
 
 
 .secret {
@@ -83,23 +40,14 @@ h1 {
 
 #score {
     width: 300px;
-    //color: #401304;
     font-family: Tahoma, sans-serif;
     font-size: 1.3em;
 }
 
-.box {
-    width: 100%;
-    display: block;
-}
 
-.boxy {
-    display: inline-table;
-}
 
-.boxer {
-    text-align: center;
-}
+
+
 
 #rules h3 {
     display: inline;
@@ -107,7 +55,7 @@ h1 {
 
 #scoreBox {
     border-collapse: collapse;
-    margin: auto;
+    margin: 0 auto;
 }
 
     #scoreBox td {
@@ -120,4 +68,25 @@ h1 {
 
 p {
     text-align: left;
+}
+
+a {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-size:100%;
+    border: 1px solid black;
+}
+
+.gameBox {
+    width:500px;
+    border:none;
+    height:500px;
+    display:block;
+    margin:0 auto;
+ 
+}
+.resulBox {
+    margin:0 auto;
+    text-align:center;
 }

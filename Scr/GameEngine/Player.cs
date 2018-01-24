@@ -10,8 +10,8 @@ namespace GameEngine
     public class Player
     {
         public string Name { get; set; }
-        public string PlayerID { get; set; }
-
+        public string ID { get; set; }
+        public string Symbol { get; set; }
         
     }
 }
