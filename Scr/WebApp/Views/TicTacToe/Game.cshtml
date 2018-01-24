@@ -1,5 +1,6 @@
 ﻿@model GameEngine.TicTacToe
 
+
 <html>
 <head>
     <link href="reset.css" rel="stylesheet" />
@@ -11,58 +12,56 @@
 
     <h1>Tic Tac Toe</h1>
 
-            <div id="board" class="gameBox">
+    <div id="board" class="gameBox">
 
-                        @for (int i = 0; i < 9; i++)
+        @for (int i = 0; i < 9; i++)
+        {
+            if (i != 2 && i != 5)
+            {
+                <a href="/TicTacToe/Game?fieldId=@i" style="background-color:@Model.GameBoard.Fields[i]"></a>
+            }
+
+            else
+            {
+                <a href="/TicTacToe/Game?fieldId=@i" style="background-color:@Model.GameBoard.Fields[i]"></a><br />
+            }
+        }
+
+    </div>
+    <a id="play" href="/TicTacToe/Game">Can I Play?</a>
+    <div class="resultBox">
+        <table id="scoreBox">
+            <thead>Score</thead>
+            <tr>
+                <td>@Model.Players[0].Name</td>
+                <td>
+                    @for (int i = 0; i < Model.Players.Count; i++)
+                    {
+                        if (i == 1)
                         {
-                            if (i != 2 && i != 5)
-                            {
-                                <a href="/TicTacToe/Game?fieldId=@i" style="background-color:@Model.GameBoard.Fields[i]"></a>
-                            }
-                            else
-                            {
-                                <a href="/TicTacToe/Game?fieldId=@i" style="background-color:@Model.GameBoard.Fields[i]"></a><br />
-                            }
+                            @Model.Players[i].Name
                         }
-                        @*<a href="/TicTacToe/Game?fieldId=0" style="background-color:@Model.GameBoard.Fields[0]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=1" style="background-color:@Model.Fields[1]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=2" style="background-color:@Model.Fields[2]"></a> <br />
-                  
-                        <a href="/TicTacToe/Game?fieldId=3" style="background-color:@Model.Fields[3]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=4" style="background-color:@Model.Fields[4]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=5" style="background-color:@Model.Fields[5]"></a> <br />
-                    
-                        <a href="/TicTacToe/Game?fieldId=6" style="background-color:@Model.Fields[6]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=7" style="background-color:@Model.Fields[7]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=8" style="background-color:@Model.Fields[8]"></a>*@
-                    
-            </div>
+                    }
+                </td>
 
 
 
+                <td>Tie</td>
+            </tr>
+            <tr>
+                <td id="Player1">0</td>
+                <td id="Player2">0</td>
+                <td id="Ties">0</td>
+            </tr>
+        </table>
 
-            <div class="resultBox">
-                <table id="scoreBox">
-                    <thead>Score</thead>
-                    <tr>
-                        <td>@Model.Players[0].Name</td>
-                        <td><p>Marinel</p></td>
-                        <td>Tie</td>
-                    </tr>
-                    <tr>
-                        <td id="Player1">0</td>
-                        <td id="Player2">0</td>
-                        <td id="Ties">0</td>
-                    </tr>
-                </table>
+        <div class="bar"><h3>( X ) It's your turn!</h3></div>
 
-                <div class="bar"><h3>( X ) It's your turn!</h3></div>
-
-            </div>
+    </div>
 
 
 
-            <div class="bar"><h4>// made by Top Four Game Developers \\</h4></div>
+    <div class="bar"><h4>// made by Top Four Game Developers \\</h4></div>
 
 
 
