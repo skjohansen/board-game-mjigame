@@ -70,11 +70,15 @@ p {
     text-align: left;
 }
 
+/*#test {
+    background: url('O.png');
+    background-size:100%;
+}*/
+
 a {
     display: inline-block;
     width: 150px;
     height: 150px;
-    background-size:100%;
     border: 1px solid black;
 }
 

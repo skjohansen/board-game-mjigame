@@ -8,16 +8,14 @@ namespace GameEngine
 {
     public class TicTacToe
     {
-        public List<Player> Players { get; set; }
+        public List<Player> Players { get; set; } = new List<Player>();
+        public GameBoard GameBoard { get; set; }
+        public Player ActivePlayer { get; set; }
 
 
         // skall innehålla all spel logik
         public void JoinGame(Player player)
-        {
-            if(Players == null)
-            {
-                Players = new List<Player>();
-            }
+        { 
             Players.Add(player);
         }
         public void MakeMove(Player player)
@@ -32,6 +30,7 @@ namespace GameEngine
         {
 
         }
+
 
     }
 }

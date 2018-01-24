@@ -1,4 +1,4 @@
-﻿@model WebApp.Models.Gameboard
+﻿@model GameEngine.TicTacToe
 
 <html>
 <head>
@@ -13,22 +13,29 @@
 
             <div id="board" class="gameBox">
 
-                        <a href="/TicTacToe/Game?fieldId=0" style=" background:url(Content/X.png);"></a> 
-
-                        <a href="/TicTacToe/Game?fieldId=1" style="background-color:@Model.FieldColor[1]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=2" style="background-color:@Model.FieldColor[2]"></a> <br />
+                        @for (int i = 0; i < 9; i++)
+                        {
+                            if (i != 3 && i != 6)
+                            {
+                                <a href="/TicTacToe/Game?fieldId=@i" style="background-color:@Model.GameBoard.Fields[i]"></a>
+                            }
+                            else
+                            {
+                                <a href="/TicTacToe/Game?fieldId=@i" style="background-color:@Model.GameBoard.Fields[i]"></a><br />
+                            }
+                        }
+                        @*<a href="/TicTacToe/Game?fieldId=0" style="background-color:@Model.GameBoard.Fields[0]"></a> 
+                        <a href="/TicTacToe/Game?fieldId=1" style="background-color:@Model.Fields[1]"></a> 
+                        <a href="/TicTacToe/Game?fieldId=2" style="background-color:@Model.Fields[2]"></a> <br />
                   
-                 
-                        <a href="/TicTacToe/Game?fieldId=3" style="background-color:@Model.FieldColor[3]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=4" style="background-color:@Model.FieldColor[4]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=5" style="background-color:@Model.FieldColor[5]"></a> <br />
+                        <a href="/TicTacToe/Game?fieldId=3" style="background-color:@Model.Fields[3]"></a> 
+                        <a href="/TicTacToe/Game?fieldId=4" style="background-color:@Model.Fields[4]"></a> 
+                        <a href="/TicTacToe/Game?fieldId=5" style="background-color:@Model.Fields[5]"></a> <br />
                     
-                   
-                        <a href="/TicTacToe/Game?fieldId=6" style="background-color:@Model.FieldColor[6]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=7" style="background-color:@Model.FieldColor[7]"></a> 
-                        <a href="/TicTacToe/Game?fieldId=8" style="background-color:@Model.FieldColor[8]"></a>
+                        <a href="/TicTacToe/Game?fieldId=6" style="background-color:@Model.Fields[6]"></a> 
+                        <a href="/TicTacToe/Game?fieldId=7" style="background-color:@Model.Fields[7]"></a> 
+                        <a href="/TicTacToe/Game?fieldId=8" style="background-color:@Model.Fields[8]"></a>*@
                     
-                
             </div>
 
 
@@ -38,8 +45,8 @@
                 <table id="scoreBox">
                     <thead>Score</thead>
                     <tr>
-                        <td>@ViewBag.Player1</td>
-                        <td>@ViewBag.Player2</td>
+                        <td>@Model.Players[0].Name</td>
+                        <td>@Model.Players[1].Name</td>
                         <td>Tie</td>
                     </tr>
                     <tr>

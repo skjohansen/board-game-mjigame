@@ -5,21 +5,21 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WebApp.Models;
-
+using GameEngine;
 namespace WebApp.Controllers
 {
     public class TicTacToeController : Controller
     {
         private static TicTacToe ticTacToeGame;
-
+       
         public ActionResult Login()
         {
             return View();
         }
 
 
-        public ActionResult PreGame(string userName) { 
+        public ActionResult PreGame(string userName)
+        { 
         
             if (ticTacToeGame == null){
                 ticTacToeGame = new TicTacToe();
@@ -28,6 +28,11 @@ namespace WebApp.Controllers
             string sessionID = Session.SessionID;
 
             ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID  });
+            //ticTacToeGame.JoinGame(new Player() { Name = userName + "2", ID = sessionID + "2" });
+            if (ticTacToeGame.ActivePlayer == null)
+            {
+                ticTacToeGame.ActivePlayer = ticTacToeGame.Players[0];
+            }
             return RedirectToAction("Game", "TicTacToe");
 
             }
@@ -36,31 +41,59 @@ namespace WebApp.Controllers
 
         public ActionResult Game(string fieldId)
         {
-
-            if (ticTacToeGame.Players.Count >= 1) {
-                ViewBag.Player1 = ticTacToeGame.Players[0].Name;
-            }
-
-            if (ticTacToeGame.Players.Count >= 2)
+            if (ticTacToeGame.GameBoard == null)
             {
-                ViewBag.Player2 = ticTacToeGame.Players[1].Name;
+                ticTacToeGame.GameBoard = new GameBoard();
+                ticTacToeGame.GameBoard.Fields = new List<string>();
+                ticTacToeGame.GameBoard.Fields.Add("white");
+                ticTacToeGame.GameBoard.Fields.Add("white");
+                ticTacToeGame.GameBoard.Fields.Add("white");
+                ticTacToeGame.GameBoard.Fields.Add("white");
+                ticTacToeGame.GameBoard.Fields.Add("white");
+                ticTacToeGame.GameBoard.Fields.Add("white");
+                ticTacToeGame.GameBoard.Fields.Add("white");
+                ticTacToeGame.GameBoard.Fields.Add("white");
+                ticTacToeGame.GameBoard.Fields.Add("white");
+                ticTacToeGame.GameBoard.Fields.Add("white");
+
+
+                ticTacToeGame.Players[0].Symbol = "red";
+                //ticTacToeGame.Players[1].Symbol = "blue";
             }
 
-            Gameboard gb = new Gameboard();
-            gb.FieldColor = new string[9];
 
-            //for (int i = 0; i < 9; i++)
-            //{
-            //    gb.FieldColor[i] = "red";
-            //}
+            if (ticTacToeGame.ActivePlayer.ID == Session.SessionID) {
 
-            //if (fieldId != null)
-            //{
-            //    gb.FieldColor[int.Parse(fieldId)] = "blue";
-            //}
+                if (fieldId != null)
+                {
+                    for (int i = 0; i < ticTacToeGame.GameBoard.Fields.Count; i++)
+                    {
+                        if (i == int.Parse(fieldId))
+                        {
+                            if(ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "white")
+                            {
+                                ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Symbol;
+                                TogglePlayer();
+                            }
+                        }
+                    }
+                }
+            }
 
+            return View(ticTacToeGame);
+        }
 
-            return View(gb);
+        private void TogglePlayer()
+        {
+            if (ticTacToeGame.ActivePlayer.ID == ticTacToeGame.Players[0].ID)
+            {
+                ticTacToeGame.ActivePlayer = ticTacToeGame.Players[1];
+            }
+            else
+            {
+                ticTacToeGame.ActivePlayer = ticTacToeGame.Players[0];
+
+            }
         }
 
 
