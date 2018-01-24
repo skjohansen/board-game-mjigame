@@ -5,9 +5,14 @@ using System.Web;
 
 namespace WebApp.Models
 {
-    public class Gameboard
+    public class GameBoard
     {
-        public string[] FieldColor { get; set; }
+        public string[] Fields { get; set; }
+
+        public GameBoard()
+        {
+            Fields = new string[9];
+        }
 
     }
 }

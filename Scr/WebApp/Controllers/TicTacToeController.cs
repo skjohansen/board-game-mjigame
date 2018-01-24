@@ -18,16 +18,19 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public ActionResult PreGame(string userName) { 
-        
-            if (ticTacToeGame == null){
+        public ActionResult PreGame(string userName)
+        {
+
+            if (ticTacToeGame == null)
+            {
                 ticTacToeGame = new TicTacToe();
             }
             ticTacToeGame.JoinGame(new Player() { Name = userName });
             return RedirectToAction("Game", "TicTacToe");
-            }
 
-        public ActionResult Game(string fieldId)
+        }
+
+        public ActionResult Game()
         {
             try
             {
@@ -47,22 +50,30 @@ namespace WebApp.Controllers
                 ViewBag.Player2 = ticTacToeGame.Players[1].Name;
             }
 
-            Gameboard gb = new Gameboard();
-            gb.FieldColor = new string[9];
-            for (int i = 0; i < 9; i++)
-            {
-                gb.FieldColor[i] = "red";
-            }
-
-            if (fieldId != null)
-            {
-                gb.FieldColor[int.Parse(fieldId)] = "blue";
-            }
+            //GameBoard gb = new GameBoard();
             
-            return View(gb);
+
+            //for (int i = 0; i < 9; i++)
+            //{
+            //    gb.Fields[i] = "red";
+            //}
+
+            //for (int i = 0; i < gb.Fields.Length;)
+            //{
+
+            //}
+            //if (fieldID != null)
+            //{
+            //    gb.Fields[int.Parse(fieldID)] = playah.Symbol;
+            //}
+
+            return View();
         }
 
-
-
+        public ActionResult Move(string fieldID)
+        {
+            PlayerModel playah = new PlayerModel();
+            return View(playah);
+        }
     }
 }
