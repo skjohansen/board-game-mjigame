@@ -11,7 +11,7 @@ namespace WebApp.Controllers
     public class TicTacToeController : Controller
     {
         private static TicTacToe ticTacToeGame;
-       
+
         public ActionResult Login()
         {
             return View();
@@ -19,25 +19,38 @@ namespace WebApp.Controllers
 
 
         public ActionResult PreGame(string userName)
-        { 
-        
-            if (ticTacToeGame == null){
+        {
+
+            if (ticTacToeGame == null)
+            {
                 ticTacToeGame = new TicTacToe();
             }
-            Session["player"] = "playing";
+
+            Session["ID"] = "player";
             string sessionID = Session.SessionID;
 
-            ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID  });
-            //ticTacToeGame.JoinGame(new Player() { Name = userName + "2", ID = sessionID + "2" });
+            if (ticTacToeGame.Players.Count == 0)
+            {
+                ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID, Color = "red" });
+            }
+
+            else if (ticTacToeGame.Players.Count == 1)
+            {
+                ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID, Color = "blue" });
+            }
+
+            else { return View("Login"); }
+
             if (ticTacToeGame.ActivePlayer == null)
             {
                 ticTacToeGame.ActivePlayer = ticTacToeGame.Players[0];
             }
+
             return RedirectToAction("Game", "TicTacToe");
 
-            }
+        }
 
-    
+
 
         public ActionResult Game(string fieldId)
         {
@@ -55,31 +68,28 @@ namespace WebApp.Controllers
                 ticTacToeGame.GameBoard.Fields.Add("white");
                 ticTacToeGame.GameBoard.Fields.Add("white");
                 ticTacToeGame.GameBoard.Fields.Add("white");
-
-
-                ticTacToeGame.Players[0].Symbol = "red";
-                //ticTacToeGame.Players[1].Symbol = "blue";
             }
 
-
-            if (ticTacToeGame.ActivePlayer.ID == Session.SessionID) {
-
-                if (fieldId != null)
+            if (ticTacToeGame.Players.Count > 1)
+            {
+                if (ticTacToeGame.ActivePlayer.ID == Session.SessionID)
                 {
-                    for (int i = 0; i < ticTacToeGame.GameBoard.Fields.Count; i++)
+                    if (fieldId != null)
                     {
-                        if (i == int.Parse(fieldId))
+                        for (int i = 0; i < ticTacToeGame.GameBoard.Fields.Count; i++)
                         {
-                            if(ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "white")
+                            if (i == int.Parse(fieldId))
                             {
-                                ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Symbol;
-                                TogglePlayer();
+                                if (ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "white")
+                                {
+                                    ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Color;
+                                    TogglePlayer();
+                                }
                             }
                         }
                     }
                 }
             }
-
             return View(ticTacToeGame);
         }
 
