@@ -25,7 +25,7 @@ namespace WebApp.Controllers
                 ticTacToeGame = new TicTacToe();
             }
 
-            Session["ID"] = "player";
+            Session["aa"] = "ok";
             string sessionID = Session.SessionID;
 
             if (ticTacToeGame.Players.Count == 0)
@@ -69,10 +69,6 @@ namespace WebApp.Controllers
             return View(ticTacToeGame);
         }
 
-        private void TogglePlayer()
-        {
-
-        }
 
     }
 }

@@ -15,6 +15,7 @@ namespace GameEngine
         public int Ties { get; set; }
 
 
+
         // skall innehålla all spel logik
         public void JoinGame(Player player)
         {
@@ -125,6 +126,14 @@ namespace GameEngine
             else
             {
                 ActivePlayer = Players[0];
+            }
+        }
+
+        public string CheckWinner2()
+        {
+            for (int i = 0; i < GameBoard.Fields.Count; i++)
+            {
+
             }
         }
     }
