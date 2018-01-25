@@ -26,11 +26,13 @@ namespace GameEngine
         public string CheckWinner()
         {
             Result = "Waiting for winner";
+            
             for (int i = 0; i < GameBoard.Fields.Count; i++)
             {
                 if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[1] == "X.png" && GameBoard.Fields[2] == "X.png")
                 {
                     Result = "The wwinner is " + Players[0].Name;
+                    Players[0].Wins++;
                 }
                 else if (GameBoard.Fields[3] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[5] == "X.png")
                 {

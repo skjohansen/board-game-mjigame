@@ -94,13 +94,15 @@ a {
     color:white;
     background-color:black;
     border-radius:5px;
-    line-height:1.5;
+    line-height:1.7;
+    padding:5px;
+    font-weight:bold;
 }
 
 .gameBox {
     width:500px;
     border:none;
-    height:350px;
+    height:320px;
     display:block;
     margin:0 auto;
  
