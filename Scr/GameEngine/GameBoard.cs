@@ -14,16 +14,16 @@ namespace GameEngine
         public GameBoard()
         {
             Fields = new List<string>();
-            Fields.Add("white");
-            Fields.Add("white");
-            Fields.Add("white");
-            Fields.Add("white");
-            Fields.Add("white");
-            Fields.Add("white");
-            Fields.Add("white");
-            Fields.Add("white");
-            Fields.Add("white");
-            Fields.Add("white");
+            Fields.Add("W.png");
+            Fields.Add("W.png");
+            Fields.Add("W.png");
+            Fields.Add("W.png");
+            Fields.Add("W.png");
+            Fields.Add("W.png");
+            Fields.Add("W.png");
+            Fields.Add("W.png");
+            Fields.Add("W.png");
+            Fields.Add("W.png");
         }
     }
 }

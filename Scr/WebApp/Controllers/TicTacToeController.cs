@@ -30,12 +30,12 @@ namespace WebApp.Controllers
             
             if (ticTacToeGame.Players.Count == 0)
             {
-                ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID, Color = "red" });
+                ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID, Color = "X.png" });
             }
 
             else if (ticTacToeGame.Players.Count == 1)
             {
-                ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID, Color = "blue" });
+                ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID, Color = "O.png" });
             }
 
             else { return View("Login"); }
@@ -66,7 +66,7 @@ namespace WebApp.Controllers
                         {
                             if (i == int.Parse(fieldId))
                             {
-                                if (ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "white")
+                                if (ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "W.png")
                                 {
                                     ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Color;
                                     TogglePlayer();

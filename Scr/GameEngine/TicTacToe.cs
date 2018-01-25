@@ -28,68 +28,68 @@ namespace GameEngine
             Result = "Waiting for winner";
             for (int i = 0; i < GameBoard.Fields.Count; i++)
             {
-                if (GameBoard.Fields[0] == "red" && GameBoard.Fields[1] == "red" && GameBoard.Fields[2] == "red")
+                if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[1] == "X.png" && GameBoard.Fields[2] == "X.png")
                 {
                     Result = "The wwinner is " + Players[0].Name;
                 }
-                else if (GameBoard.Fields[3] == "red" && GameBoard.Fields[4] == "red" && GameBoard.Fields[5] == "red")
+                else if (GameBoard.Fields[3] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[5] == "X.png")
                 {
                     Result = "The wwinner is " + Players[0].Name;
                 }
-                else if (GameBoard.Fields[6] == "red" && GameBoard.Fields[7] == "red" && GameBoard.Fields[8] == "red")
+                else if (GameBoard.Fields[6] == "X.png" && GameBoard.Fields[7] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
                     Result = "The wwinner is " + Players[0].Name;
                 }
-                else if (GameBoard.Fields[0] == "red" && GameBoard.Fields[3] == "red" && GameBoard.Fields[6] == "red")
+                else if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[3] == "X.png" && GameBoard.Fields[6] == "X.png")
                 {
                     Result = "The wwinner is " + Players[0].Name;
                 }
-                else if (GameBoard.Fields[1] == "red" && GameBoard.Fields[4] == "red" && GameBoard.Fields[7] == "red")
+                else if (GameBoard.Fields[1] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[7] == "X.png")
                 {
                     Result = "The wwinner is " + Players[0].Name;
                 }
-                else if (GameBoard.Fields[2] == "red" && GameBoard.Fields[5] == "red" && GameBoard.Fields[8] == "red")
+                else if (GameBoard.Fields[2] == "X.png" && GameBoard.Fields[5] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
                     Result = "The wwinner is " + Players[0].Name;
                 }
-                else if (GameBoard.Fields[0] == "red" && GameBoard.Fields[4] == "red" && GameBoard.Fields[8] == "red")
+                else if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
                     Result = "The wwinner is " + Players[0].Name;
                 }
-                else if (GameBoard.Fields[2] == "red" && GameBoard.Fields[4] == "red" && GameBoard.Fields[6] == "red")
+                else if (GameBoard.Fields[2] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[6] == "X.png")
                 {
                     Result = "The wwinner is " + Players[0].Name;
                 }
 
-                if (GameBoard.Fields[0] == "blue" && GameBoard.Fields[1] == "blue" && GameBoard.Fields[2] == "blue")
+                if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[1] == "O.png" && GameBoard.Fields[2] == "O.png")
                 {
                     Result = "The wwinner is " + Players[1].Name;
                 }
-                else if (GameBoard.Fields[3] == "blue" && GameBoard.Fields[4] == "blue" && GameBoard.Fields[5] == "blue")
+                else if (GameBoard.Fields[3] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[5] == "O.png")
                 {
                     Result = "The wwinner is " + Players[1].Name;
                 }
-                else if (GameBoard.Fields[6] == "blue" && GameBoard.Fields[7] == "blue" && GameBoard.Fields[8] == "blue")
+                else if (GameBoard.Fields[6] == "O.png" && GameBoard.Fields[7] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
                     Result = "The wwinner is " + Players[1].Name;
                 }
-                else if (GameBoard.Fields[0] == "blue" && GameBoard.Fields[3] == "blue" && GameBoard.Fields[6] == "blue")
+                else if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[3] == "O.png" && GameBoard.Fields[6] == "O.png")
                 {
                     Result = "The wwinner is " + Players[1].Name;
                 }
-                else if (GameBoard.Fields[1] == "blue" && GameBoard.Fields[4] == "blue" && GameBoard.Fields[7] == "blue")
+                else if (GameBoard.Fields[1] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[7] == "O.png")
                 {
                     Result = "The wwinner is " + Players[1].Name;
                 }
-                else if (GameBoard.Fields[2] == "blue" && GameBoard.Fields[5] == "blue" && GameBoard.Fields[8] == "blue")
+                else if (GameBoard.Fields[2] == "O.png" && GameBoard.Fields[5] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
                     Result = "The wwinner is " + Players[1].Name;
                 }
-                else if (GameBoard.Fields[0] == "blue" && GameBoard.Fields[4] == "blue" && GameBoard.Fields[8] == "blue")
+                else if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
                     Result = "The wwinner is " + Players[1].Name;
                 }
-                else if (GameBoard.Fields[2] == "blue" && GameBoard.Fields[4] == "blue" && GameBoard.Fields[6] == "blue")
+                else if (GameBoard.Fields[2] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[6] == "O.png")
                 {
                     Result = "The wwinner is " + Players[1].Name;
                 }

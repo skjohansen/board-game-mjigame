@@ -18,21 +18,21 @@
         {
             if (i != 2 && i != 5)
             {
-                <a href="/TicTacToe/Game?fieldId=@i" style="background-color:@Model.GameBoard.Fields[i]"></a>
+                <a href="/TicTacToe/Game?fieldId=@i" style="background-image:url(/Content/@Model.GameBoard.Fields[i]);"></a>
             }
 
             else
             {
-                <a href="/TicTacToe/Game?fieldId=@i" style="background-color:@Model.GameBoard.Fields[i]"></a><br />
+                <a href="/TicTacToe/Game?fieldId=@i" style="background-image:url(/Content/@Model.GameBoard.Fields[i]"></a><br />
             }
         }
 
-        <div id="hejhej"  style="background-image: url(/Content/X.png);"></div>
+        @*<div id="hejhej"  style="background-image: url(/Content/X.png);"></div>*@
 
     </div>
     <a id="play" href="/TicTacToe/Game">Can I Play?</a>
 
-    <h1>@Model.Result</h1>
+    <h2>@Model.Result</h2>
     <div class="resultBox">
         <table id="scoreBox">
             <thead>Score</thead>
