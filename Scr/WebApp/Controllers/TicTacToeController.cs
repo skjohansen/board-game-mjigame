@@ -71,11 +71,6 @@ namespace WebApp.Controllers
                                     ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Color;
                                     TogglePlayer();
                                     ticTacToeGame.CheckWinner();
-                                    //if (ticTacToeGame.CheckWinner() != "Waiting for winner")
-                                    //{
-                                    //    ticTacToeGame = null;
-                                    //    return View("Login");
-                                    //}
                                 }
                             }
                         }
