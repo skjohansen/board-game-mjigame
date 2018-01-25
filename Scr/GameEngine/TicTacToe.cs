@@ -20,8 +20,24 @@ namespace GameEngine
         {
             Players.Add(player);
         }
-        public void MakeMove(Player player, string fieldId)
+        public void MakeMove(string fieldId)
         {
+            for (int i = 0; i < GameBoard.Fields.Count; i++)
+            {
+                if (i == int.Parse(fieldId))
+                {
+                    if (GameBoard.Fields[int.Parse(fieldId)] == "W.png")
+                    {
+                        GameBoard.Fields[i] = ActivePlayer.Color;
+                        TogglePlayer();
+                        CheckWinner();
+                        if (CheckWinner() == "The winner is " + ActivePlayer.Name)
+                        {
+                            ActivePlayer.Wins++;
+                        }
+                    }
+                }
+            }
         }
         public string CheckWinner()
         {
@@ -31,69 +47,68 @@ namespace GameEngine
             {
                 if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[1] == "X.png" && GameBoard.Fields[2] == "X.png")
                 {
-                    Result = "The wwinner is " + Players[0].Name;
-                    Players[0].Wins++;
+                    Result = "The winner is " + Players[0].Name;
                 }
                 else if (GameBoard.Fields[3] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[5] == "X.png")
                 {
-                    Result = "The wwinner is " + Players[0].Name;
+                    Result = "The winner is " + Players[0].Name;
                 }
                 else if (GameBoard.Fields[6] == "X.png" && GameBoard.Fields[7] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
-                    Result = "The wwinner is " + Players[0].Name;
+                    Result = "The winner is " + Players[0].Name;
                 }
                 else if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[3] == "X.png" && GameBoard.Fields[6] == "X.png")
                 {
-                    Result = "The wwinner is " + Players[0].Name;
+                    Result = "The winner is " + Players[0].Name;
                 }
                 else if (GameBoard.Fields[1] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[7] == "X.png")
                 {
-                    Result = "The wwinner is " + Players[0].Name;
+                    Result = "The winner is " + Players[0].Name;
                 }
                 else if (GameBoard.Fields[2] == "X.png" && GameBoard.Fields[5] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
-                    Result = "The wwinner is " + Players[0].Name;
+                    Result = "The winner is " + Players[0].Name;
                 }
                 else if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
-                    Result = "The wwinner is " + Players[0].Name;
+                    Result = "The winner is " + Players[0].Name;
                 }
                 else if (GameBoard.Fields[2] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[6] == "X.png")
                 {
-                    Result = "The wwinner is " + Players[0].Name;
+                    Result = "The winner is " + Players[0].Name;
                 }
 
                 if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[1] == "O.png" && GameBoard.Fields[2] == "O.png")
                 {
-                    Result = "The wwinner is " + Players[1].Name;
+                    Result = "The winner is " + Players[1].Name;
                 }
                 else if (GameBoard.Fields[3] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[5] == "O.png")
                 {
-                    Result = "The wwinner is " + Players[1].Name;
+                    Result = "The winner is " + Players[1].Name;
                 }
                 else if (GameBoard.Fields[6] == "O.png" && GameBoard.Fields[7] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
-                    Result = "The wwinner is " + Players[1].Name;
+                    Result = "The winner is " + Players[1].Name;
                 }
                 else if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[3] == "O.png" && GameBoard.Fields[6] == "O.png")
                 {
-                    Result = "The wwinner is " + Players[1].Name;
+                    Result = "The winner is " + Players[1].Name;
                 }
                 else if (GameBoard.Fields[1] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[7] == "O.png")
                 {
-                    Result = "The wwinner is " + Players[1].Name;
+                    Result = "The winner is " + Players[1].Name;
                 }
                 else if (GameBoard.Fields[2] == "O.png" && GameBoard.Fields[5] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
-                    Result = "The wwinner is " + Players[1].Name;
+                    Result = "The winner is " + Players[1].Name;
                 }
                 else if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
-                    Result = "The wwinner is " + Players[1].Name;
+                    Result = "The winner is " + Players[1].Name;
                 }
                 else if (GameBoard.Fields[2] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[6] == "O.png")
                 {
-                    Result = "The wwinner is " + Players[1].Name;
+                    Result = "The winner is " + Players[1].Name;
                 }
 
             }
@@ -101,9 +116,17 @@ namespace GameEngine
             return Result;
 
         }
-        
-        // Constructor
-
+        public void TogglePlayer()
+        {
+            if (ActivePlayer.ID == Players[0].ID)
+            {
+                ActivePlayer = Players[1];
+            }
+            else
+            {
+                ActivePlayer = Players[0];
+            }
+        }
     }
 }
 

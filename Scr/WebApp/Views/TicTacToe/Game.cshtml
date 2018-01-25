@@ -33,50 +33,50 @@
     </div>
     <div class="bar">
         <h3>
-         
-                @Model.ActivePlayer.Name 's turn
-          
-    </h3>
-</div>
-<a id="play" href="/TicTacToe/Game">Refresh</a>
 
-<h2>@Model.Result</h2>
-<div class="resultBox">
-    <table id="scoreBox">
-        <thead>Score</thead>
-        <tr>
-            <td>@Model.Players[0].Name</td>
-            <td>
-                @for (int i = 0; i < Model.Players.Count; i++)
-                {
-                    if (i == 1)
+            @Model.ActivePlayer.Name 's turn
+
+        </h3>
+    </div>
+    <a id="play" href="/TicTacToe/Game">Refresh</a>
+
+    <h2>@Model.Result</h2>
+    <div class="resultBox">
+        <table id="scoreBox">
+            <thead>Score</thead>
+            <tr>
+                <td>@Model.Players[0].Name</td>
+                <td>
+                    @for (int i = 0; i < Model.Players.Count; i++)
                     {
-                        @Model.Players[i].Name
+                        if (i == 1)
+                        {
+                            @Model.Players[i].Name
+                        }
                     }
-                }
-            </td>
+                </td>
 
 
 
-            <td>Ties</td>
-        </tr>
-        <tr>
-            <td id="Player1">@Model.Players[0].Wins</td>
-            <td id="Player2">
-                @for (int i = 0; i < Model.Players.Count; i++)
-                {
-                    if (i == 1)
+                <td>Ties</td>
+            </tr>
+            <tr>
+                <td id="Player1">@Model.Players[0].Wins</td>
+                <td id="Player2">
+                    @for (int i = 0; i < Model.Players.Count; i++)
                     {
-                        @Model.Players[i].Wins
+                        if (i == 1)
+                        {
+                            @Model.Players[i].Wins
+                        }
                     }
-                }
-            </td>
-            <td id="Ties">0</td>
-        </tr>
-    </table>
+                </td>
+                <td id="Ties">0</td>
+            </tr>
+        </table>
 
 
-</div>
+    </div>
 
 
 

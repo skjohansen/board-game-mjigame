@@ -27,7 +27,7 @@ namespace WebApp.Controllers
 
             Session["ID"] = "player";
             string sessionID = Session.SessionID;
-            
+
             if (ticTacToeGame.Players.Count == 0)
             {
                 ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID, Color = "X.png" });
@@ -62,18 +62,7 @@ namespace WebApp.Controllers
                 {
                     if (fieldId != null)
                     {
-                        for (int i = 0; i < ticTacToeGame.GameBoard.Fields.Count; i++)
-                        {
-                            if (i == int.Parse(fieldId))
-                            {
-                                if (ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "W.png")
-                                {
-                                    ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Color;
-                                    TogglePlayer();
-                                    ticTacToeGame.CheckWinner();
-                                }
-                            }
-                        }
+                        ticTacToeGame.MakeMove(fieldId);
                     }
                 }
             }
@@ -82,16 +71,40 @@ namespace WebApp.Controllers
 
         private void TogglePlayer()
         {
-            if (ticTacToeGame.ActivePlayer.ID == ticTacToeGame.Players[0].ID)
-            {
-                ticTacToeGame.ActivePlayer = ticTacToeGame.Players[1];
-            }
-            else
-            {
-                ticTacToeGame.ActivePlayer = ticTacToeGame.Players[0];
 
-            }
         }
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+//private void TogglePlayer()
+//{
+
+//}
+
+//                        for (int i = 0; i<ticTacToeGame.GameBoard.Fields.Count; i++)
+//                        {
+//                            if (i == int.Parse(fieldId))
+//                            {
+//                                if (ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "W.png")
+//                                {
+//                                    ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Color;
+//                                    TogglePlayer();
+//ticTacToeGame.CheckWinner();
+//                                    if (ticTacToeGame.CheckWinner() == "The winner is " + ticTacToeGame.ActivePlayer.Name)
+//                                    {
+//                                        ticTacToeGame.ActivePlayer.Wins++;
+//                                    }
+//                                }
+//                            }
+//                        }
