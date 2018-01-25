@@ -17,7 +17,6 @@ namespace WebApp.Controllers
             return View();
         }
 
-
         public ActionResult PreGame(string userName)
         {
 
@@ -28,7 +27,7 @@ namespace WebApp.Controllers
 
             Session["ID"] = "player";
             string sessionID = Session.SessionID;
-
+            
             if (ticTacToeGame.Players.Count == 0)
             {
                 ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID, Color = "red" });
@@ -50,24 +49,11 @@ namespace WebApp.Controllers
 
         }
 
-
-
         public ActionResult Game(string fieldId)
         {
             if (ticTacToeGame.GameBoard == null)
             {
                 ticTacToeGame.GameBoard = new GameBoard();
-                ticTacToeGame.GameBoard.Fields = new List<string>();
-                ticTacToeGame.GameBoard.Fields.Add("white");
-                ticTacToeGame.GameBoard.Fields.Add("white");
-                ticTacToeGame.GameBoard.Fields.Add("white");
-                ticTacToeGame.GameBoard.Fields.Add("white");
-                ticTacToeGame.GameBoard.Fields.Add("white");
-                ticTacToeGame.GameBoard.Fields.Add("white");
-                ticTacToeGame.GameBoard.Fields.Add("white");
-                ticTacToeGame.GameBoard.Fields.Add("white");
-                ticTacToeGame.GameBoard.Fields.Add("white");
-                ticTacToeGame.GameBoard.Fields.Add("white");
             }
 
             if (ticTacToeGame.Players.Count > 1)
@@ -84,6 +70,12 @@ namespace WebApp.Controllers
                                 {
                                     ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Color;
                                     TogglePlayer();
+                                    ticTacToeGame.CheckWinner();
+                                    //if (ticTacToeGame.CheckWinner() != "Waiting for winner")
+                                    //{
+                                    //    ticTacToeGame = null;
+                                    //    return View("Login");
+                                    //}
                                 }
                             }
                         }
@@ -105,9 +97,6 @@ namespace WebApp.Controllers
 
             }
         }
-
-
-
 
     }
 }

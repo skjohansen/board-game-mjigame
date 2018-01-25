@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <link href="reset.css" rel="stylesheet" />
+    @*<link href="reset.css" rel="stylesheet" />*@
     <link href="~/Content/Game.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -27,8 +27,12 @@
             }
         }
 
+        <div id="hejhej"  style="background-image: url(/Content/X.png);"></div>
+
     </div>
     <a id="play" href="/TicTacToe/Game">Can I Play?</a>
+
+    <h1>@Model.Result</h1>
     <div class="resultBox">
         <table id="scoreBox">
             <thead>Score</thead>

@@ -9,5 +9,21 @@ namespace GameEngine
     public class GameBoard
     {
         public List<string> Fields { get; set; }
+
+        // Constructor
+        public GameBoard()
+        {
+            Fields = new List<string>();
+            Fields.Add("white");
+            Fields.Add("white");
+            Fields.Add("white");
+            Fields.Add("white");
+            Fields.Add("white");
+            Fields.Add("white");
+            Fields.Add("white");
+            Fields.Add("white");
+            Fields.Add("white");
+            Fields.Add("white");
+        }
     }
 }
