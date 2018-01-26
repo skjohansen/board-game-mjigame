@@ -51,16 +51,7 @@ namespace WebApp.Controllers
 
         public ActionResult Game(string fieldId)
         {
-            if (ticTacToeGame.AlHassan())
-            {
-                for(int i = 0; i < ticTacToeGame.GameBoard.Fields.Count; i++)
-                {
-                    ticTacToeGame.GameBoard.Fields[i] = "W.png";
-                    ticTacToeGame.CheckWinner();
-                    ticTacToeGame.AlHassan();
-                    return View();
-                }
-            }
+
             if (ticTacToeGame.GameBoard == null)
             {
                 ticTacToeGame.GameBoard = new GameBoard();
@@ -73,8 +64,8 @@ namespace WebApp.Controllers
                     if (fieldId != null)
                     {
                         ticTacToeGame.MakeMove(fieldId);
-                        ticTacToeGame.AlHassan();
-                      
+                        ticTacToeGame.CheckWinner();
+                        ticTacToeGame.AddWins();
                     }
                 }
             }

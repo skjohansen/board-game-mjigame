@@ -33,12 +33,13 @@ input {
     #submit {
         background: #3399ff;
         border: 0;
-        width: 250px;
+        width: 255px;
         height: 40px;
         border-radius: 3px;
         color: white;
         cursor: pointer;
         transition: background 0.4s linear;
+        margin-top:10px;
     }
 
     input[type="email"]::-webkit-input-placeholder {

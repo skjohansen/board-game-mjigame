@@ -14,15 +14,12 @@ namespace GameEngine
         public GameBoard()
         {
             Fields = new List<string>();
-            Fields.Add("W.png");
-            Fields.Add("W.png");
-            Fields.Add("W.png");
-            Fields.Add("W.png");
-            Fields.Add("W.png");
-            Fields.Add("W.png");
-            Fields.Add("W.png");
-            Fields.Add("W.png");
-            Fields.Add("W.png");
+
+            // Add 9 fields with the string "W.png" (White background)
+            for (int i = 0; i < 9; i++)
+            {
+                Fields.Add("W.png");
+            }
         }
     }
 }
