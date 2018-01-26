@@ -30,20 +30,15 @@ namespace GameEngine
                     if (GameBoard.Fields[int.Parse(fieldId)] == "W.png")
                     {
                         GameBoard.Fields[i] = ActivePlayer.Color;
-                        TogglePlayer();
                         CheckWinner();
-                        if (CheckWinner() == "The winner is " + ActivePlayer.Name)
-                        {
-                            ActivePlayer.Wins++;
-                        }
+                        TogglePlayer();
                     }
                 }
             }
         }
-        public string CheckWinner()
+
+        public void CheckWinner()
         {
-            Result = "Waiting for winner";
-            
             for (int i = 0; i < GameBoard.Fields.Count; i++)
             {
                 if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[1] == "X.png" && GameBoard.Fields[2] == "X.png")
@@ -113,9 +108,18 @@ namespace GameEngine
                 }
 
             }
-
-            return Result;
-
+        }
+        public bool AlHassan()
+        {
+            if (Result == "The winner is " + ActivePlayer.Name)
+            {
+                ActivePlayer.Wins++;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public void TogglePlayer()
         {
@@ -129,13 +133,11 @@ namespace GameEngine
             }
         }
 
-        public string CheckWinner2()
+        public TicTacToe()
         {
-            for (int i = 0; i < GameBoard.Fields.Count; i++)
-            {
-
-            }
+            Result = "Who's the winner?";
         }
+
     }
 }
 

@@ -23,7 +23,6 @@ namespace GameEngine
             Fields.Add("W.png");
             Fields.Add("W.png");
             Fields.Add("W.png");
-            Fields.Add("W.png");
         }
     }
 }
