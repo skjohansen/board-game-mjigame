@@ -6,9 +6,10 @@
 <head>
     @*<link href="reset.css" rel="stylesheet" />*@
     <link href="~/Content/Game.css" rel="stylesheet" type="text/css" />
+    
 </head>
 <body>
-
+    
 
 
     <h1>Tic Tac Toe</h1>
@@ -45,39 +46,40 @@
             <thead>Score</thead>
             <tr>
                 <td>@Model.Players[0].Name</td>
-                <td>
-                    @for (int i = 0; i < Model.Players.Count; i++)
-                    {
-                        if (i == 1)
-                        {
-                            @Model.Players[i].Name
-                        }
-                    }
-                </td>
+               
 
+
+                    @if (Model.Players.Count > 1)
+                    {
+                      <td>  @Model.Players[1].Name</td>
+                    }
+                    else
+                    {
+                        <td>waiting for player..</td>
+                    }
 
 
                 <td>Ties</td>
             </tr>
             <tr>
                 <td id="Player1">@Model.Players[0].Wins</td>
-                <td id="Player2">
-                    @for (int i = 0; i < Model.Players.Count; i++)
+                    @if (Model.Players.Count > 1)
                     {
-                        if (i == 1)
-                        {
-                            @Model.Players[i].Wins
-                        }
+                    <td id="Player2">
+                        @Model.Players[1].Wins
+                        </td>
                     }
-                </td>
-                <td id="Ties">0</td>
+                    else
+                    {
+                        <td>0</td>
+                    }
+
+<td id="Ties">0</td>
             </tr>
         </table>
 
 
     </div>
-
-
 
 
 

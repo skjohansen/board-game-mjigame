@@ -19,31 +19,30 @@ namespace WebApp.Controllers
 
         public ActionResult PreGame(string userName)
         {
-
+            // Skapa ett nytt game om det inte redan finns ett
             if (ticTacToeGame == null)
             {
                 ticTacToeGame = new TicTacToe();
             }
 
-            Session["aa"] = "ok";
+            Session["what"] = "ever";
             string sessionID = Session.SessionID;
 
-            if (ticTacToeGame.Players.Count == 0)
+            if (ticTacToeGame.Players[0].ID == null)
             {
-                ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID, Color = "X.png" });
+                ticTacToeGame.Players[0].Name = userName;
+                ticTacToeGame.Players[0].ID = sessionID;
+                ticTacToeGame.Players[0].Color = "X.png";
             }
 
-            else if (ticTacToeGame.Players.Count == 1)
+            else if (ticTacToeGame.Players[1].ID == null)
             {
-                ticTacToeGame.JoinGame(new Player() { Name = userName, ID = sessionID, Color = "O.png" });
+                ticTacToeGame.Players[1].Name = userName;
+                ticTacToeGame.Players[1].ID = sessionID;
+                ticTacToeGame.Players[1].Color = "O.png";
             }
 
             else { return View("Login"); }
-
-            if (ticTacToeGame.ActivePlayer == null)
-            {
-                ticTacToeGame.ActivePlayer = ticTacToeGame.Players[0];
-            }
 
             return RedirectToAction("Game", "TicTacToe");
 
@@ -52,23 +51,36 @@ namespace WebApp.Controllers
         public ActionResult Game(string fieldId)
         {
 
-            if (ticTacToeGame.GameBoard == null)
+            if (ticTacToeGame.Players[1].ID == null)
             {
-                ticTacToeGame.GameBoard = new GameBoard();
+                ticTacToeGame.ActivePlayer = ticTacToeGame.Players[0];
             }
 
-            if (ticTacToeGame.Players.Count > 1)
+
+            // Om det finns 2 spelare i spelet så kan den aktiva spelaren göra ett move
+            if (fieldId != null)
             {
-                if (ticTacToeGame.ActivePlayer.ID == Session.SessionID)
+                if (ticTacToeGame.Players.Count > 1)
                 {
-                    if (fieldId != null)
+                    if (ticTacToeGame.ActivePlayer.ID == Session.SessionID)
                     {
                         ticTacToeGame.MakeMove(fieldId);
-                        ticTacToeGame.CheckWinner();
-                        ticTacToeGame.AddWins();
+                        if (ticTacToeGame.CheckWinner())
+                        {
+                            foreach (Player x in ticTacToeGame.Players)
+                            {
+                                if (ticTacToeGame.ActivePlayer != x)
+                                {
+                                    x.Wins++;
+                                    ticTacToeGame.ResetGameBoard();
+                                    return View("GameOver", ticTacToeGame);
+                                }
+                            }
+                        }
                     }
                 }
             }
+
             return View(ticTacToeGame);
         }
 

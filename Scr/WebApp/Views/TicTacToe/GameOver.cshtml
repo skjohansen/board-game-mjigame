@@ -1,0 +1,31 @@
+﻿@model GameEngine.TicTacToe
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="refresh" content="5; url=/TicTacToe/Game" />
+    <title>GameOver</title>
+</head>
+<body>
+    <div> 
+        <center>
+
+            
+            @for (int i = 0; i < Model.Players.Count; i++)
+            {
+                if (Model.ActivePlayer != Model.Players[i])
+                {
+                   <h1> YOU WON!! NEW GAME STARTING SOON!!; </h1>
+                }
+            }
+
+          
+        </center>
+    </div>
+</body>
+</html>

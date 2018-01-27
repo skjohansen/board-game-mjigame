@@ -11,10 +11,15 @@ namespace GameEngine
         public List<Player> Players { get; set; } = new List<Player>();
         public GameBoard GameBoard { get; set; }
         public Player ActivePlayer { get; set; }
-        public Player Winner { get; set; }
         public int Ties { get; set; }
 
-
+        public TicTacToe()
+        {
+            GameBoard = new GameBoard();
+            Players = new List<Player>();
+            Players.Add(new Player { ID = null });
+            Players.Add(new Player { ID = null });
+        }
 
         // All spel-logic ska vara här
         public void JoinGame(Player player)
@@ -30,103 +35,110 @@ namespace GameEngine
                     if (GameBoard.Fields[int.Parse(fieldId)] == "W.png")
                     {
                         GameBoard.Fields[i] = ActivePlayer.Color;
-                        CheckWinner();
-                        if (Winner == ActivePlayer)
-                        {
-
-                        }
                         TogglePlayer();
                     }
                 }
             }
         }
 
-        public void CheckWinner()
+        public bool CheckWinner()
         {
-
 
             for (int i = 0; i < GameBoard.Fields.Count; i++)
             {
 
-                // Check if Player 1 won the game
                 if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[1] == "X.png" && GameBoard.Fields[2] == "X.png")
                 {
-                    Winner = Players[0];
-                    RestartGame();
+                    return true;
                 }
+
                 else if (GameBoard.Fields[3] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[5] == "X.png")
                 {
-                    Winner = Players[0];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[6] == "X.png" && GameBoard.Fields[7] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
-                    Winner = Players[0];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[3] == "X.png" && GameBoard.Fields[6] == "X.png")
                 {
-                    Winner = Players[0];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[1] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[7] == "X.png")
                 {
-                    Winner = Players[0];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[2] == "X.png" && GameBoard.Fields[5] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
-                    Winner = Players[0];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
-                    Winner = Players[0];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[2] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[6] == "X.png")
                 {
-                    Winner = Players[0];
+                    return true;
                 }
 
                 // Check if Player 2 won the game
-                if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[1] == "O.png" && GameBoard.Fields[2] == "O.png")
+                else if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[1] == "O.png" && GameBoard.Fields[2] == "O.png")
                 {
-                    Winner = Players[1];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[3] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[5] == "O.png")
                 {
-                    Winner = Players[1];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[6] == "O.png" && GameBoard.Fields[7] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
-                    Winner = Players[1];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[3] == "O.png" && GameBoard.Fields[6] == "O.png")
                 {
-                    Winner = Players[1];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[1] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[7] == "O.png")
                 {
-                    Winner = Players[1];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[2] == "O.png" && GameBoard.Fields[5] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
-                    Winner = Players[1];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
-                    Winner = Players[1];
+                    return true;
                 }
+
                 else if (GameBoard.Fields[2] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[6] == "O.png")
                 {
-                    Winner = Players[1];
+                    return true;
+                }
+
+                else
+                {
+                    return false;
                 }
 
             }
+
+            return false;
         }
-        public void AddWins()
-        {
-            if (Winner == ActivePlayer)
-            {
-                ActivePlayer.Wins++;
-                Winner = null;
-            }
-        }
+
+
         public void TogglePlayer()
         {
             if (ActivePlayer.ID == Players[0].ID)
@@ -138,17 +150,11 @@ namespace GameEngine
                 ActivePlayer = Players[0];
             }
         }
-
-        public TicTacToe()
-        {
-          
-        }
-        public void RestartGame()
+        public void ResetGameBoard()
         {
             for (int i = 0; i < GameBoard.Fields.Count; i++)
             {
                 GameBoard.Fields[i] = "W.png";
-                ActivePlayer = Players[1];
             }
         }
 
