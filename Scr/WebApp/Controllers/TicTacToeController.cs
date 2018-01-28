@@ -32,14 +32,14 @@ namespace WebApp.Controllers
             {
                 ticTacToeGame.Players[0].Name = userName;
                 ticTacToeGame.Players[0].ID = sessionID;
-                ticTacToeGame.Players[0].Color = "X.png";
+                ticTacToeGame.Players[0].Symbol = "X.png";
             }
 
             else if (ticTacToeGame.Players[1].ID == null)
             {
                 ticTacToeGame.Players[1].Name = userName;
                 ticTacToeGame.Players[1].ID = sessionID;
-                ticTacToeGame.Players[1].Color = "O.png";
+                ticTacToeGame.Players[1].Symbol = "O.png";
             }
 
             else { return View("Login"); }
@@ -109,7 +109,7 @@ namespace WebApp.Controllers
 //                            {
 //                                if (ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "W.png")
 //                                {
-//                                    ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Color;
+//                                    ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Symbol;
 //                                    TogglePlayer();
 //ticTacToeGame.CheckWinner();
 //                                    if (ticTacToeGame.CheckWinner() == "The winner is " + ticTacToeGame.ActivePlayer.Name)
