@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Tic Tac Toe";
+}
+<div class="content">
+    <span id="gameInformation"></span>
+    <div>
+        <div id="register">
+            <input type="text" class="input" id="gamaName" placeholder="User Name" />
+            <button type="button" class="button" id="registerName">Lets Go </button>
+        </div>
+        <div id="findOpponent">
+            <strong>Now look for an opponent </strong>
+            <em>You're just a small way from beating your first opponent!</em><br />
+            <input type="button" class="button findGame" id="findGame" value=" Find an opponent" />
+        </div>
+        <div id="waitingForOpponent"> We are looking for an opponent, please wait! </div>
+        <div id="game"></div>
+        <div class="clear">
+            <input type="button" class="button findGame" id="findAnotherGame" value=" Start again " />
+        </div>
+    </div>
+</div>
