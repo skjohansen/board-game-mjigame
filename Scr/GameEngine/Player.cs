@@ -13,5 +13,6 @@ namespace GameEngine
         public string ID { get; set; }
         public string Symbol { get; set; }
         public int Wins { get; set; }
+        public string Color { get; set; }
     }
 }
