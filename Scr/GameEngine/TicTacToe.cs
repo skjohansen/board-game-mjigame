@@ -12,6 +12,7 @@ namespace GameEngine
         public GameBoard GameBoard { get; set; }
         public Player ActivePlayer { get; set; }
         public int Ties { get; set; }
+        public string GameOverMessage { get; set; }
 
         public TicTacToe()
         {
@@ -49,82 +50,98 @@ namespace GameEngine
 
                 if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[1] == "X.png" && GameBoard.Fields[2] == "X.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[0].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[3] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[5] == "X.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[0].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[6] == "X.png" && GameBoard.Fields[7] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[0].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[3] == "X.png" && GameBoard.Fields[6] == "X.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[0].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[1] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[7] == "X.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[0].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[2] == "X.png" && GameBoard.Fields[5] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[0].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[0] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[8] == "X.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[0].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[2] == "X.png" && GameBoard.Fields[4] == "X.png" && GameBoard.Fields[6] == "X.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[0].Name + "!";
                     return true;
                 }
 
                 // Check if Player 2 won the game
                 else if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[1] == "O.png" && GameBoard.Fields[2] == "O.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[1].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[3] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[5] == "O.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[1].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[6] == "O.png" && GameBoard.Fields[7] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[1].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[3] == "O.png" && GameBoard.Fields[6] == "O.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[1].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[1] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[7] == "O.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[1].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[2] == "O.png" && GameBoard.Fields[5] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[1].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[0] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[8] == "O.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[1].Name + "!";
                     return true;
                 }
 
                 else if (GameBoard.Fields[2] == "O.png" && GameBoard.Fields[4] == "O.png" && GameBoard.Fields[6] == "O.png")
                 {
+                    GameOverMessage = "Contratulations " + Players[1].Name + "!";
                     return true;
                 }
 
@@ -137,8 +154,25 @@ namespace GameEngine
 
             return false;
         }
+        public bool CheckTie()
+        {
+            int count = 0;
+            for (int i = 0; i < GameBoard.Fields.Count; i++)
+            {
+                if (GameBoard.Fields[i] != "W.png")
+                {
+                    count++;
+                   if (count > 8)
+                    {
+                        GameOverMessage = "Det blev lika!";
+                        return true;
+                    }
+                }
+            }
 
+            return false;
 
+        }
         public void TogglePlayer()
         {
             if (ActivePlayer.ID == Players[0].ID)

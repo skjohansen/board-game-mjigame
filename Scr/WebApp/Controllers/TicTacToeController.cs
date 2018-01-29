@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using GameEngine;
 namespace WebApp.Controllers
 {
     public class TicTacToeController : Controller
@@ -76,6 +75,12 @@ namespace WebApp.Controllers
                                     return View("GameOver", ticTacToeGame);
                                 }
                             }
+                        }
+                        if (ticTacToeGame.CheckTie())
+                        {
+                            ticTacToeGame.ResetGameBoard();
+                            ticTacToeGame.Ties += 1;
+                            return View("GameOver", ticTacToeGame);
                         }
                     }
                 }
