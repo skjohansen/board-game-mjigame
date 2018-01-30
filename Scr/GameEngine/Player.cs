@@ -23,6 +23,10 @@ namespace GameEngine
             Wins = 0;
             Email = email;
         }
+
+        public Player()
+        {
+        }
     }
 
 
