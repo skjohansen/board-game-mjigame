@@ -110,11 +110,12 @@ namespace GameEngine
         {
             if (sessionID == Players[0].ID)
             {
-                GameInformation.DisplayName = "You are playing as " + Players[0].Name + " [ " + Players[0].Symbol + " ]";
+               
+                GameInformation.DisplayName = Players[0].Name + " You are playing as:" + " [ " + Players[0].Symbol[0] + " ]";
             }
             else if (sessionID == Players[1].ID)
             {
-                GameInformation.DisplayName = "You are playing as " + Players[1].Name + " [ " + Players[1].Symbol + " ]";
+                GameInformation.DisplayName = Players[1].Name + " You are playing as:" + " [ " + Players[1].Symbol[0] + " ]";
             }
         }
     }
