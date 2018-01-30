@@ -97,7 +97,7 @@ namespace WebApp.Controllers
 //                            {
 //                                if (ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "W.png")
 //                                {
-//                                    ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Color;
+//                                    ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Symbol;
 //                                    TogglePlayer();
 //ticTacToeGame.CheckWinner();
 //                                    if (ticTacToeGame.CheckWinner() == "The winner is " + ticTacToeGame.ActivePlayer.Name)

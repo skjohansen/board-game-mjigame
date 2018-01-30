@@ -119,7 +119,7 @@
     </Content>
     <Content Include="Content\reset.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\W.png">
+    <Content Include="Content\empty.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\X.png">

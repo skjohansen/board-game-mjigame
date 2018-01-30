@@ -29,13 +29,13 @@ namespace GameEngine
             if (Players.Count == 0)
             {
                 Players.Add(new Player(userName, sessionID));
-                Players[0].Color = "X.png";
+                Players[0].Symbol = "X.png";
                 ActivePlayer = Players[0];
             }
             else if (Players.Count == 1)
             {
                 Players.Add(new Player(userName, sessionID));
-                Players[1].Color = "O.png";
+                Players[1].Symbol = "O.png";
             }
             else
             {
@@ -51,9 +51,9 @@ namespace GameEngine
             {
                 if (i == field)
                 {
-                    if (GameBoard.Fields[field] == "W.png")
+                    if (GameBoard.Fields[field] == "empty.png")
                     {
-                        GameBoard.Fields[i] = ActivePlayer.Color;
+                        GameBoard.Fields[i] = ActivePlayer.Symbol;
                     }
                 }
             }
@@ -65,17 +65,17 @@ namespace GameEngine
             for (int i = 0; i < GameBoard.Fields.Count; i++)
             {
 
-                if ((GameBoard.Fields[0] == p.Color && GameBoard.Fields[1] == p.Color && GameBoard.Fields[2] == p.Color) || (GameBoard.Fields[3] == p.Color && GameBoard.Fields[4] == p.Color && GameBoard.Fields[5] == p.Color)
-                    || (GameBoard.Fields[6] == p.Color && GameBoard.Fields[7] == p.Color && GameBoard.Fields[8] == p.Color) || (GameBoard.Fields[0] == p.Color && GameBoard.Fields[3] == p.Color && GameBoard.Fields[6] == p.Color)
-                    || (GameBoard.Fields[1] == p.Color && GameBoard.Fields[4] == p.Color && GameBoard.Fields[7] == p.Color) || (GameBoard.Fields[2] == p.Color && GameBoard.Fields[5] == p.Color && GameBoard.Fields[8] == p.Color)
-                    || (GameBoard.Fields[0] == p.Color && GameBoard.Fields[4] == p.Color && GameBoard.Fields[8] == p.Color) || (GameBoard.Fields[2] == p.Color && GameBoard.Fields[4] == p.Color && GameBoard.Fields[6] == p.Color))
+                if ((GameBoard.Fields[0] == p.Symbol && GameBoard.Fields[1] == p.Symbol && GameBoard.Fields[2] == p.Symbol) || (GameBoard.Fields[3] == p.Symbol && GameBoard.Fields[4] == p.Symbol && GameBoard.Fields[5] == p.Symbol)
+                    || (GameBoard.Fields[6] == p.Symbol && GameBoard.Fields[7] == p.Symbol && GameBoard.Fields[8] == p.Symbol) || (GameBoard.Fields[0] == p.Symbol && GameBoard.Fields[3] == p.Symbol && GameBoard.Fields[6] == p.Symbol)
+                    || (GameBoard.Fields[1] == p.Symbol && GameBoard.Fields[4] == p.Symbol && GameBoard.Fields[7] == p.Symbol) || (GameBoard.Fields[2] == p.Symbol && GameBoard.Fields[5] == p.Symbol && GameBoard.Fields[8] == p.Symbol)
+                    || (GameBoard.Fields[0] == p.Symbol && GameBoard.Fields[4] == p.Symbol && GameBoard.Fields[8] == p.Symbol) || (GameBoard.Fields[2] == p.Symbol && GameBoard.Fields[4] == p.Symbol && GameBoard.Fields[6] == p.Symbol))
                 {
                     p.Wins += 1;
                     GameInformation.GameOverMessage = "Congratulations " + p.Name + "!";
                     return true;
                 }
 
-                else if (!GameBoard.Fields.Contains("W.png"))
+                else if (!GameBoard.Fields.Contains("empty.png"))
                 {
                     GameInformation.GameOverMessage = "Det blev lika!";
                     GameInformation.Ties += 1;
@@ -103,18 +103,18 @@ namespace GameEngine
         {
             for (int i = 0; i < GameBoard.Fields.Count; i++)
             {
-                GameBoard.Fields[i] = "W.png";
+                GameBoard.Fields[i] = "empty.png";
             }
         }
         public void SetDisplayName(string sessionID)
         {
             if (sessionID == Players[0].ID)
             {
-                GameInformation.DisplayName = "You are playing as " + Players[0].Name;
+                GameInformation.DisplayName = "You are playing as " + Players[0].Name + " [ " + Players[0].Symbol + " ]";
             }
             else if (sessionID == Players[1].ID)
             {
-                GameInformation.DisplayName = "You are playing as " + Players[1].Name;
+                GameInformation.DisplayName = "You are playing as " + Players[1].Name + " [ " + Players[1].Symbol + " ]";
             }
         }
     }
