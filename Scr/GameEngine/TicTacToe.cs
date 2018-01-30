@@ -108,13 +108,22 @@ namespace GameEngine
         }
         public void SetDisplayName(string sessionID)
         {
+            char[] MyChar = { '.', 'p', 'n', 'g' };
+
             if (sessionID == Players[0].ID)
             {
-                GameInformation.DisplayName = "You are playing as " + Players[0].Name + " [ " + Players[0].Symbol + " ]";
+                string Player1TrimEnd = Players[0].Symbol;
+                string NewPlayer1TrimEnd = Player1TrimEnd.TrimEnd(MyChar);
+
+                GameInformation.DisplayName = "You are playing as " + Players[0].Name + " [ " + NewPlayer1TrimEnd + " ]";
             }
+
             else if (sessionID == Players[1].ID)
             {
-                GameInformation.DisplayName = "You are playing as " + Players[1].Name + " [ " + Players[1].Symbol + " ]";
+                string Player2TrimEnd = Players[1].Symbol;
+                string NewPlayer2TrimEnd = Player2TrimEnd.TrimEnd(MyChar);
+
+                GameInformation.DisplayName = "You are playing as " + Players[1].Name + " [ " + NewPlayer2TrimEnd + " ]";
             }
         }
     }
