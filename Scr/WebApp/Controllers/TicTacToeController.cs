@@ -44,6 +44,7 @@ namespace WebApp.Controllers
 
         public ActionResult Game(string fieldID)
         {
+            ticTacToeGame.SetDisplayName(Session.SessionID);
 
             if (fieldID == null || ticTacToeGame.Players.Count < 2 || ticTacToeGame.ActivePlayer.ID != Session.SessionID)
             {
@@ -68,9 +69,7 @@ namespace WebApp.Controllers
 
         public ActionResult GameOver()
         {
-            ticTacToeGame.GameInformation.GameIsOver = true;
             return View();
-        
         }
 
     }

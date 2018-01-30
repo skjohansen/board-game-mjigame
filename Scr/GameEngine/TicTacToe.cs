@@ -8,7 +8,10 @@ namespace GameEngine
 {
     public class TicTacToe
     {
-        public List<Player> Players { get; set; }
+        public List<Player> Players
+        {
+            get; set;
+        }
         public GameBoard GameBoard { get; set; }
         public Player ActivePlayer { get; set; }
         public GameInformation GameInformation { get; set; }
@@ -21,9 +24,10 @@ namespace GameEngine
             GameInformation = new GameInformation();
         }
 
-       
+
         public void JoinGame(string userName, string sessionID)
         {
+
             if (Players.Count == 0)
             {
                 Players.Add(new Player(userName, sessionID));
@@ -69,7 +73,7 @@ namespace GameEngine
                     || (GameBoard.Fields[0] == p.Color && GameBoard.Fields[4] == p.Color && GameBoard.Fields[8] == p.Color) || (GameBoard.Fields[2] == p.Color && GameBoard.Fields[4] == p.Color && GameBoard.Fields[6] == p.Color))
                 {
                     p.Wins += 1;
-                    GameInformation.GameOverMessage = "Contratulations " + p.Name + "!";
+                    GameInformation.GameOverMessage = "Congratulations " + p.Name + "!";
                     return true;
                 }
 
@@ -104,7 +108,17 @@ namespace GameEngine
                 GameBoard.Fields[i] = "W.png";
             }
         }
-
+        public void SetDisplayName(string sessionID)
+        {
+            if (sessionID == Players[0].ID)
+            {
+                GameInformation.DisplayName = "You are playing as " + Players[0].Name;
+            }
+            else if (sessionID == Players[1].ID)
+            {
+                GameInformation.DisplayName = "You are playing as " + Players[1].Name;
+            }
+        }
     }
 }
 

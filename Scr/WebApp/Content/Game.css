@@ -110,3 +110,8 @@ a {
     text-align: center;
 }
 
+#displayName {
+
+    font-size:20px;
+    color:green;
+}

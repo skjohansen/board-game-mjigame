@@ -10,5 +10,7 @@ namespace GameEngine
     {
         public string GameOverMessage { get; set; }
         public int Ties { get; set; }
+        public string DisplayName { get; set; }
+
     }
 }
