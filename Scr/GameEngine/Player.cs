@@ -13,14 +13,15 @@ namespace GameEngine
         public string ID { get; set; }
         public string Symbol { get; set; }
         public int Wins { get; set; }
+        public string Email { get; set; }
 
 
-
-        public Player(string name, string id)
+        public Player(string name, string id, string email)
         {
             Name = name;
             ID = id;
             Wins = 0;
+            Email = email;
         }
     }
 
