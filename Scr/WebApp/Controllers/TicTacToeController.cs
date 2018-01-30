@@ -58,6 +58,7 @@ namespace WebApp.Controllers
                 if (ticTacToeGame.CheckIfGameIsOver(ticTacToeGame.ActivePlayer))
                 {
                     ticTacToeGame.ResetGameBoard();
+                    ticTacToeGame.TogglePlayer();
                     return View("GameOver", ticTacToeGame);
                 }
 

@@ -8,10 +8,8 @@ namespace GameEngine
 {
     public class TicTacToe
     {
-        public List<Player> Players
-        {
-            get; set;
-        }
+        public List<Player> Players { get; set; }
+        
         public GameBoard GameBoard { get; set; }
         public Player ActivePlayer { get; set; }
         public GameInformation GameInformation { get; set; }
