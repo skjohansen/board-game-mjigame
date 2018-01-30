@@ -15,8 +15,9 @@ namespace GameEngine
 
         public TicTacToe()
         {
-            GameBoard = new GameBoard();
             Players = new List<Player>();
+            GameBoard = new GameBoard();
+            ActivePlayer = null;
             GameInformation = new GameInformation();
         }
 

@@ -68,6 +68,7 @@ namespace WebApp.Controllers
 
         public ActionResult GameOver()
         {
+            ticTacToeGame.GameInformation.GameIsOver = true;
             return View();
         
         }
