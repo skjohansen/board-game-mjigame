@@ -6,10 +6,10 @@
 <head>
     @*<link href="reset.css" rel="stylesheet" />*@
     <link href="~/Content/Game.css" rel="stylesheet" type="text/css" />
-    
+    <meta http-equiv="refresh" content="2; url=/TicTacToe/Game" />
 </head>
 <body>
-    
+
 
 
     <h1>Tic Tac Toe</h1>
@@ -20,12 +20,12 @@
         {
             if (i != 2 && i != 5)
             {
-                <a href="/TicTacToe/Game?fieldId=@i" style="background-image:url(/Content/@Model.GameBoard.Fields[i]);"></a>
+                <a href="/TicTacToe/Game?fieldID=@i" style="background-image:url(/Content/@Model.GameBoard.Fields[i]);"></a>
             }
 
             else
             {
-                <a href="/TicTacToe/Game?fieldId=@i" style="background-image:url(/Content/@Model.GameBoard.Fields[i]"></a><br />
+                <a href="/TicTacToe/Game?fieldID=@i" style="background-image:url(/Content/@Model.GameBoard.Fields[i]"></a><br />
             }
         }
 
@@ -40,49 +40,46 @@
     </div>
     <a id="play" href="/TicTacToe/Game">Refresh</a>
 
-    
+
     <div class="resultBox">
         <table id="scoreBox">
-            <thead>Score</thead>
+            <h2 id="score">Score</h2>
             <tr>
                 <td>@Model.Players[0].Name</td>
-               
 
 
-                    @if (Model.Players.Count > 1)
-                    {
-                      <td>  @Model.Players[1].Name</td>
-                    }
-                    else
-                    {
-                        <td>waiting for player..</td>
-                    }
+
+                @if (Model.Players.Count > 1)
+                {
+                    <td>  @Model.Players[1].Name</td>
+                }
+                else
+                {
+                    <td>waiting for player..</td>
+                }
 
 
                 <td>Ties</td>
             </tr>
             <tr>
                 <td id="Player1">@Model.Players[0].Wins</td>
-                    @if (Model.Players.Count > 1)
-                    {
+                @if (Model.Players.Count > 1)
+                {
                     <td id="Player2">
                         @Model.Players[1].Wins
-                        </td>
-                    }
-                    else
-                    {
-                        <td></td>
-                    }
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                }
 
-<td id="Ties">@Model.Ties</td>
+                <td id="Ties">@Model.GameInformation.Ties</td>
             </tr>
         </table>
 
 
     </div>
-
-
-
 
 
 </body>

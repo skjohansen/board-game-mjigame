@@ -18,7 +18,7 @@ namespace WebApp.Controllers
 
         public ActionResult PreGame(string userName)
         {
-            // Skapa ett nytt game om det inte redan finns ett
+
             if (ticTacToeGame == null)
             {
                 ticTacToeGame = new TicTacToe();
@@ -27,68 +27,50 @@ namespace WebApp.Controllers
             Session["what"] = "ever";
             string sessionID = Session.SessionID;
 
-            if (ticTacToeGame.Players[0].ID == null)
+            try
             {
-                ticTacToeGame.Players[0].Name = userName;
-                ticTacToeGame.Players[0].ID = sessionID;
-                ticTacToeGame.Players[0].Symbol = "X.png";
+                ticTacToeGame.JoinGame(userName, sessionID);
             }
 
-            else if (ticTacToeGame.Players[1].ID == null)
+            catch
             {
-                ticTacToeGame.Players[1].Name = userName;
-                ticTacToeGame.Players[1].ID = sessionID;
-                ticTacToeGame.Players[1].Symbol = "O.png";
+                ViewBag.GameIsFullMessage = "Game is full, please try later";
+                return View("Login");
             }
-
-            else { return View("Login"); }
 
             return RedirectToAction("Game", "TicTacToe");
 
         }
 
-        public ActionResult Game(string fieldId)
+        public ActionResult Game(string fieldID)
         {
 
-            if (ticTacToeGame.Players[1].ID == null)
+            if (fieldID == null || ticTacToeGame.Players.Count < 2 || ticTacToeGame.ActivePlayer.ID != Session.SessionID)
             {
-                ticTacToeGame.ActivePlayer = ticTacToeGame.Players[0];
+                return View(ticTacToeGame);
             }
 
-
-            // Om det finns 2 spelare i spelet så kan den aktiva spelaren göra ett move
-            if (fieldId != null)
+            else
             {
-                if (ticTacToeGame.Players.Count > 1)
+                ticTacToeGame.MakeMove(fieldID);
+
+                if (ticTacToeGame.CheckIfGameIsOver(ticTacToeGame.ActivePlayer))
                 {
-                    if (ticTacToeGame.ActivePlayer.ID == Session.SessionID)
-                    {
-                        ticTacToeGame.MakeMove(fieldId);
-                        if (ticTacToeGame.CheckWinner())
-                        {
-                            foreach (Player x in ticTacToeGame.Players)
-                            {
-                                if (ticTacToeGame.ActivePlayer != x)
-                                {
-                                    x.Wins++;
-                                    ticTacToeGame.ResetGameBoard();
-                                    return View("GameOver", ticTacToeGame);
-                                }
-                            }
-                        }
-                        if (ticTacToeGame.CheckTie())
-                        {
-                            ticTacToeGame.ResetGameBoard();
-                            ticTacToeGame.Ties += 1;
-                            return View("GameOver", ticTacToeGame);
-                        }
-                    }
+                    ticTacToeGame.ResetGameBoard();
+                    return View("GameOver", ticTacToeGame);
                 }
+
+                ticTacToeGame.TogglePlayer();
+                return View(ticTacToeGame);
             }
 
-            return View(ticTacToeGame);
         }
 
+        public ActionResult GameOver()
+        {
+            return View();
+        
+        }
 
     }
 }
@@ -114,7 +96,7 @@ namespace WebApp.Controllers
 //                            {
 //                                if (ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "W.png")
 //                                {
-//                                    ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Symbol;
+//                                    ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Color;
 //                                    TogglePlayer();
 //ticTacToeGame.CheckWinner();
 //                                    if (ticTacToeGame.CheckWinner() == "The winner is " + ticTacToeGame.ActivePlayer.Name)
