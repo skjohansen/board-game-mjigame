@@ -22,6 +22,10 @@ namespace GameEngine
             ID = id;
             Wins = 0;
         }
+
+        public Player()
+        {
+        }
     }
 
 
