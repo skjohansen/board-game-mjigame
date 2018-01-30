@@ -35,7 +35,7 @@ namespace WebApp.Controllers
             catch
             {
                 ViewBag.GameIsFullMessage = "Game is full, please try later";
-                return View("Login");
+                return View( "Login" );
             }
 
             return RedirectToAction("Game", "TicTacToe");

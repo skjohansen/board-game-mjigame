@@ -38,10 +38,28 @@ namespace UnitTestGameEngine
             bg.Fields[2] = "X.png";
             TicTacToe ttt = new TicTacToe();
             ttt.GameBoard = bg;
-            ttt.Players.Add(new Player() {
+            ttt.Players.Add(new Player()
+            {
                 Name = "player1"
             });
 
+        }
+
+
+      [TestMethod]
+        public void CheckWinner_3Xs_OWins()
+        {
+            // Arrage
+            GameBoard bg = new GameBoard();
+            bg.Fields[0] = "O.png";
+            bg.Fields[1] = "O.png";
+            bg.Fields[2] = "O.png";
+            TicTacToe ttt = new TicTacToe();
+            ttt.GameBoard = bg;
+            ttt.Players.Add(new Player()
+            {
+                Name = "player1"
+            });
             // Act
             //var result = ttt.CheckWinner();
 
