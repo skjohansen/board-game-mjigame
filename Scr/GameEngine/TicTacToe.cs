@@ -23,18 +23,18 @@ namespace GameEngine
         }
 
 
-        public void JoinGame(string userName, string sessionID)
+        public void JoinGame(string userName, string sessionID, string email)
         {
 
             if (Players.Count == 0)
             {
-                Players.Add(new Player(userName, sessionID));
+                Players.Add(new Player(userName, sessionID, email));
                 Players[0].Symbol = "X.png";
                 ActivePlayer = Players[0];
             }
             else if (Players.Count == 1)
             {
-                Players.Add(new Player(userName, sessionID));
+                Players.Add(new Player(userName, sessionID, email));
                 Players[1].Symbol = "O.png";
             }
             else

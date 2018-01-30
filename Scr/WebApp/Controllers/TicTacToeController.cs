@@ -16,7 +16,7 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public ActionResult PreGame(string userName)
+        public ActionResult PreGame(string userName, string email)
         {
 
             if (ticTacToeGame == null)
@@ -29,7 +29,7 @@ namespace WebApp.Controllers
 
             try
             {
-                ticTacToeGame.JoinGame(userName, sessionID);
+                ticTacToeGame.JoinGame(userName, sessionID, email);
             }
 
             catch
@@ -75,35 +75,3 @@ namespace WebApp.Controllers
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-//private void TogglePlayer()
-//{
-
-//}
-
-//                        for (int i = 0; i<ticTacToeGame.GameBoard.Fields.Count; i++)
-//                        {
-//                            if (i == int.Parse(fieldId))
-//                            {
-//                                if (ticTacToeGame.GameBoard.Fields[int.Parse(fieldId)] == "W.png")
-//                                {
-//                                    ticTacToeGame.GameBoard.Fields[i] = ticTacToeGame.ActivePlayer.Symbol;
-//                                    TogglePlayer();
-//ticTacToeGame.CheckWinner();
-//                                    if (ticTacToeGame.CheckWinner() == "The winner is " + ticTacToeGame.ActivePlayer.Name)
-//                                    {
-//                                        ticTacToeGame.ActivePlayer.Wins++;
-//                                    }
-//                                }
-//                            }
-//                        }
