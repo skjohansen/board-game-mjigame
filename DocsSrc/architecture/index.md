@@ -1,4 +1,4 @@
-# Board game architecture
+﻿# Board game architecture
 
 * How are your board game build?
 
@@ -41,4 +41,36 @@ GameEngine:
 -Player: Där har vi flera variabler ex "Name, ID, Symbol..." och en konstruktor med några av de propperties i klassen.
 
 -TicTacToe: Denna klass är vår "Main" som vi har våra metoder för att köra programmet och dess logik.
+
+
+
+
+
+
+
+TicTacToe klassen 
+
+
+- TicTacToe klasen innehåller tre instancevariabler och en lista av instance av Player. instance variaberna är 
+
+1, Gameboard har ny instance
+2, Player har ny instance
+3, GameInformation har ny instance 
+
+
+Alla fyra instancer  är public och körs i konstrukturen. 
+
+- TicTacToe klassen har sex methoder. och de är Följande; 
+
+1, JoinGame ; metoden är en void metod som gör att ny spekare ansluta sig med sin användare namn, sessionID och epost . vilkoret är om Players.Count är zero avslutar först spellaren om Players.Count  är ett avslutar andra spellaren. Annars är det en undantag. 
+
+2, MakeMove (); metoden är en void metod som fyler field med Spelarens Symbol. tilex. om första spelaren är x fyler varje tryck på första spelaren x. Om andra spelaren symbol är O fyler O för varie tryck.
+
+3, CheckIfGameIsOver () ; är en boolisk metod som kollar om spelat är slut eller inte. Vilkoret är att den kollar om tre rader eller kolumner är samma symbol retunerar true. Om inte är samma tre field samma symbol retunerar false. Och när någon vinner visar en text som congratulerar vinnaren.
+
+4, TogglePlayer() ; är en void metod som  kollar statud på spelaren. Dvs kollar den vem är active. 
+
+5, ResetGameBoard(); är en void metode som återfyller igen med tom bilder med foreach loop. 
+
+6,  SetDisplayName () ;  är en void metod visar användare namn med en sessionID. 
 
