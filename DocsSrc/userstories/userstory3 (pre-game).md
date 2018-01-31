@@ -1,4 +1,5 @@
 # User stories
 
 
-"If I, as a user, chose to host a game, I want to be directed to a new page on which I sit and wait for the second player to join"
+"If I am the first player to join this game, I want to see an empty game board and then I want to be able to see when the second player
+has entered the game."
