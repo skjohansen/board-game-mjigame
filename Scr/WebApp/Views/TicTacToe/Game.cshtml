@@ -1,7 +1,5 @@
 ﻿@model GameEngine.TicTacToe
 
-
-
 <html>
 <head>
     @*<link href="reset.css" rel="stylesheet" />*@
@@ -14,7 +12,10 @@
 
     <h1>Tic Tac Toe</h1>
 
-    <div id="board" class="gameBox">
+    <p id="displayName">@Model.GameInformation.DisplayName</p>
+
+    <div class="gameDiv">
+
 
         @for (int i = 0; i < Model.GameBoard.Fields.Count; i++)
         {
@@ -29,36 +30,33 @@
             }
         }
 
-
     </div>
-    <div class="bar">
-        <h3>
-            <br />
-            @Model.ActivePlayer.Name 's turn
-        </h3>
-        <h3 id="displayName">@Model.GameInformation.DisplayName</h3>
-    </div>
-
-    <div class="resultBox">
-        <table id="scoreBox">
-            <h2 id="score">Score</h2>
-            <tr>
-                <td>@Model.Players[0].Name</td>
+    <h3 id="turn">
+         @Model.ActivePlayer.Name 's turn
+    </h3>
+    <div class="resultDiv">
 
 
 
-                @if (Model.Players.Count > 1)
-                {
-                    <td>  @Model.Players[1].Name</td>
-                }
-                else
-                {
-                    <td>waiting for player..</td>
-                }
+
+        <table id="scoreTable">
+            <tr><th colspan="3">Score</th></tr>
+            <td>@Model.Players[0].Name</td>
 
 
-                <td>Draws</td>
-            </tr>
+
+            @if (Model.Players.Count > 1)
+            {
+                <td>  @Model.Players[1].Name</td>
+            }
+            else
+            {
+                <td>waiting for player..</td>
+            }
+
+
+            <td>Draws</td>
+
             <tr>
                 <td id="Player1">@Model.Players[0].Wins</td>
                 @if (Model.Players.Count > 1)
