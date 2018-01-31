@@ -53,9 +53,9 @@ TicTacToe klassen
 
 - TicTacToe klasen innehåller tre instancevariabler och en lista av instance av Player. instance variaberna är 
 
-1, Gameboard har ny instance
-2, Player har ny instance
-3, GameInformation har ny instance 
+1, Gameboard har ny instance eller objekt
+2, Player har ny instance eller objekt 
+3, GameInformation har ny instance eller objekt 
 
 
 Alla fyra instancer  är public och körs i konstrukturen. 
@@ -68,9 +68,9 @@ Alla fyra instancer  är public och körs i konstrukturen.
 
 3, CheckIfGameIsOver () ; är en boolisk metod som kollar om spelat är slut eller inte. Vilkoret är att den kollar om tre rader eller kolumner är samma symbol retunerar true. Om inte är samma tre field samma symbol retunerar false. Och när någon vinner visar en text som congratulerar vinnaren.
 
-4, TogglePlayer() ; är en void metod som  kollar statud på spelaren. Dvs kollar den vem är active. 
+4, TogglePlayer() ; är en void metod som  kollar status på spelaren. Dvs kollar den vem är active. 
 
-5, ResetGameBoard(); är en void metode som återfyller igen med tom bilder med foreach loop. 
+5, ResetGameBoard(); är en void metode som återfyller igen  fieldmed tom bilder med foreach loop. 
 
 6,  SetDisplayName () ;  är en void metod visar användare namn med en sessionID. 
 
