@@ -53,7 +53,14 @@ namespace WebApp.Controllers
 
             else
             {
-                ticTacToeGame.MakeMove(fieldID);
+                try
+                {
+                    ticTacToeGame.MakeMove(fieldID);
+                }
+                catch
+                {
+                    return View(ticTacToeGame);
+                }
 
                 if (ticTacToeGame.CheckIfGameIsOver(ticTacToeGame.ActivePlayer))
                 {

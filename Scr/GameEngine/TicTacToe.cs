@@ -22,7 +22,6 @@ namespace GameEngine
             GameInformation = new GameInformation();
         }
 
-
         public void JoinGame(string userName, string sessionID, string email)
         {
 
@@ -55,6 +54,10 @@ namespace GameEngine
                     {
                         GameBoard.Fields[i] = ActivePlayer.Symbol;
                     }
+                    else
+                    {
+                        throw new ArgumentException("Field was not empty");
+                    }
                 }
             }
         }
@@ -77,8 +80,8 @@ namespace GameEngine
 
                 else if (!GameBoard.Fields.Contains("empty.png"))
                 {
-                    GameInformation.GameOverMessage = "Det blev lika!";
-                    GameInformation.Ties += 1;
+                    GameInformation.GameOverMessage = "This game is a draw";
+                    GameInformation.Draws += 1;
                     return true;
                 }
 
