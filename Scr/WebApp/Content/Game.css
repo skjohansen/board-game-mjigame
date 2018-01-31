@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #fff;
+    background-color: orange;
     padding-top: 30px;
     padding-bottom: 20px;
     text-align: center;
@@ -78,11 +78,13 @@ p {
 
 a {
     display: inline-block;
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
+    width: 75px;
+    height: 75px;
     background-size: cover;
-    transition: ease-in 
+    border-radius:50%;
+    padding:20px;
+    opacity:0.7;
+    
 }
 
 #play {
