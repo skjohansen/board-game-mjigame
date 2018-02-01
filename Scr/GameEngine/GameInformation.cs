@@ -11,6 +11,5 @@ namespace GameEngine
         public string GameOverMessage { get; set; }
         public int Draws { get; set; }
         public string DisplayName { get; set; }
-
     }
 }
