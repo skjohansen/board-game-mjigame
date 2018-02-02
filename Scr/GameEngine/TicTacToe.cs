@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,7 @@ namespace GameEngine
 
         public void JoinGame(string userName, string sessionID, string email)
         {
-
+            Log.Information("Game engine, join game with {name}", userName);
             if (Players.Count == 0)
             {
                 Players.Add(new Player(userName, sessionID, email));

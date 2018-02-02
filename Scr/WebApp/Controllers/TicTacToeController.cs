@@ -1,4 +1,5 @@
 ﻿using GameEngine;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,16 @@ namespace WebApp.Controllers
 
         public ActionResult Login()
         {
+            Log.Information("Entered Login action in TacTacToeController");
             return View();
         }
 
         public ActionResult PreGame(string userName, string email)
         {
-
+            Log.Information("Entered PreGame actiom in TicTacToe controller");
             if (ticTacToeGame == null)
             {
+                Log.Error("TicTacToe game is NULL");
                 ticTacToeGame = new TicTacToe();
             }
 
@@ -29,6 +32,7 @@ namespace WebApp.Controllers
 
             try
             {
+                Log.Information("Try to hoin game with name: {name} and email: {email}", userName, email);
                 ticTacToeGame.JoinGame(userName, sessionID, email);
             }
 
